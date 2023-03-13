@@ -30,6 +30,6 @@ This repository contains all of the project files (including the documentation),
 
 ### Contact
 Aleksandra Białas
-Wydział Informatyki i Telekomunikacji
-Politechniki Krakowskiej
+Cracow University of Technology
+Faculty of Computer Science and Telecommunications
 e-mail: aleksandra.bialas@student.pk.edu.pl
