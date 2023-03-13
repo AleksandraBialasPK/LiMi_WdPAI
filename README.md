@@ -1,4 +1,4 @@
-<h1 align="center">Add logo here</h1>
+![MyImage](LiMi.png)
 
 ### Table of Contents
 * [Introduction](#Introduction)
