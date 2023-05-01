@@ -20,7 +20,7 @@ This repository contains all of the project files (including the documentation),
 ### Launch
 1. To clone the repository open a terminal and execute:
     ```bash
-    $ git clone --recursive https://github.com/AleksandraBialasPK/Aleksandra_Bialas_WdPAI.git
+    $ git clone --recursive https://github.com/AleksandraBialasPK/LiMi_WdPAI.git
     ```
 2. Execute the command:
     ```bash
