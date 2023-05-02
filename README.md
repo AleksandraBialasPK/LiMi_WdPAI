@@ -14,7 +14,7 @@ This repository contains all of the project files (including the documentation),
 
 ### Technologies
 * PHP: 8.1.3-fpm-alpine3.15
-* Nginx: 1.17.8-fpm-alpine3.15
+* Nginx: 1.24-alpine
 * Docker: 20.10.12
 
 ### Launch
