@@ -26,8 +26,17 @@ This repository contains all of the project files (including the documentation),
     ```bash
     docker-compose up
     ```
-3. Open a web browser and lauch a website!
+3. Open a web browser and launch a website!
 
+4. To stop Docker execute the command:
+    ```bash
+    docker-compose stop
+    ```
+5. To run the application again run the command:
+    ```bash
+    docker-compose start
+    ```
+    
 ### Contact
 Aleksandra Białas
 Cracow University of Technology
