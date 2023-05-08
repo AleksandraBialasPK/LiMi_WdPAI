@@ -108,3 +108,13 @@ button:hover {
     max-width: 100%;
     min-width: 100%;
 }
+
+#pug-image {
+    height: 100%;
+    width: auto;
+}
+
+a {
+    color: #303030;
+    font-size: 1.5em;
+}
