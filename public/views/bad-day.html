@@ -5,39 +5,20 @@
     <title>LiMi Day view</title>
 </head>
 <body>
-    <div class="sidebar-nav">
-        <button id="create-new-event-button">Create new event</button>
-        <div class="events">
-            <label for="Sports"><input type="checkbox" class="checkbox-event" id="sports" id="Sports" name="Sports" checked>Sports</label>
-            <label for="Work/School"><input type="checkbox" class="checkbox-event" id="work-school" id="Work/School" name="Work/School" checked>Work/School</label>
-            <label for="House"><input type="checkbox" class="checkbox-event" id="house" id="House" name="House" checked>House</label>
-            <label for="Social"><input type="checkbox" class="checkbox-event" id="social" id="Social" name="Social" checked>Social</label>
-            <label for="Errands"><input type="checkbox" class="checkbox-event" id="errands" id="Errands" name="Errands" checked>Errands</label>
-        </div>
-        <div class="events">
-            <label for="Person1"><input type="checkbox" class="checkbox-person" id="Person1" name="Person" checked>Aleksandra</label>
-            <label for="Person2"><input type="checkbox" class="checkbox-person" id="Person2" name="Person" checked>Aleks</label>
-            <label for="Person3"><input type="checkbox" class="checkbox-person" id="Person3" name="Person" checked>Hanna</label>
-            <label for="Person4"><input type="checkbox" class="checkbox-person" id="Person4" name="Person" checked>Dawid</label>
-        </div>
-        <button>Log out</button>
-    </div>
-    <main>
-        <header>
-            <nav>
-                <div class="views-nav">
-                    <button class="day-week-month-nav">Day</button>
-                    <button class="day-week-month-nav">Week</button>
-                    <button class="day-week-month-nav">Month</button>
-                </div>
-                <div class="content-nav push-right">
-                    <a> < </a>
-                    <p>Monday</p>
-                    <a> > </a>
-                </div>
-            </nav>
-        </header>
-        <section class="calnedar-content">
+    <div class="content">
+        <nav>
+            <div class="views-nav">
+                <button class="day-week-month-nav">Day</button>
+                <button class="day-week-month-nav">Week</button>
+                <button class="day-week-month-nav">Month</button>
+            </div>
+            <div class="content-nav push-right">
+                <a> < </a>
+                <p>Monday</p>
+                <a> > </a>
+            </div>
+        </nav>
+        <div class="calnedar-content">
             <table>
                 <tr>
                     <td class="hours">0:00</td>
@@ -136,6 +117,23 @@
                     <td>empty</td>
                 </tr>
             </table>
-        </section>
-    </main>
+        </div>
+    </div>
+    <div class="sidebar-nav">
+        <button id="create-new-event-button">Create new event</button>
+        <div class="events">
+            <label for="Sports"><input type="checkbox" class="checkbox-event" id="sports" id="Sports" name="Sports" checked>Sports</label>
+            <label for="Work/School"><input type="checkbox" class="checkbox-event" id="work-school" id="Work/School" name="Work/School" checked>Work/School</label>
+            <label for="House"><input type="checkbox" class="checkbox-event" id="house" id="House" name="House" checked>House</label>
+            <label for="Social"><input type="checkbox" class="checkbox-event" id="social" id="Social" name="Social" checked>Social</label>
+            <label for="Errands"><input type="checkbox" class="checkbox-event" id="errands" id="Errands" name="Errands" checked>Errands</label>
+        </div>
+        <div class="events">
+            <label for="Person1"><input type="checkbox" class="checkbox-person" id="Person1" name="Person" checked>Aleksandra</label>
+            <label for="Person2"><input type="checkbox" class="checkbox-person" id="Person2" name="Person" checked>Aleks</label>
+            <label for="Person3"><input type="checkbox" class="checkbox-person" id="Person3" name="Person" checked>Hanna</label>
+            <label for="Person4"><input type="checkbox" class="checkbox-person" id="Person4" name="Person" checked>Dawid</label>
+        </div>
+        <button>Log out</button>
+    </div>
 </body>
