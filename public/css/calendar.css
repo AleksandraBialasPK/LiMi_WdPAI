@@ -103,38 +103,84 @@ button {
     grid-template: 1fr / 1fr 17fr;
     border-radius: 5px;
     row-gap: 10px;
-    background-color: #C6B9DF;
 }
 
 .timeline {
-    grid-column: 1 / span 1;
-    grid-row: 1 / 25;
     display: grid;
     grid-template: repeat(24, 50px) / 1fr;
     background-color: #FFFFFF;
+}
+
+#timeline-day-view {
+    grid-column: 1 / span 1;
+    grid-row: 1 / 25;
 }
 
 .hours {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid #046380;
+    height: 100px;
 }
 
 .day-grid-tiles {
     grid-column: 2 / span 1;
-    grid-row: 1 / 25;
     grid-template: repeat(24, 50px) / 1fr;
-    background-color: #82CD47;
 }
 
 .day-grid-tile {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50px;
-    border: 2px solid #FF99B7;
+    height: 100px;
     background-color: #FFFFFF;
+}
+
+.week-grid-tiles {
+    grid-column: 2 / span 1;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.week-grid-tile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    background-color: #FFFFFF;
+}
+
+.weekday-grid {
+    display: grid;
+    grid-template: repeat(24, 50px) / 1fr;
+}
+
+.monday-grid-tiles {
+    grid-column: 1/ span 1;
+}
+
+.tuesday-grid-tiles {
+    grid-column: 2 / span 1;
+}
+
+.wednesday-grid-tiles {
+    grid-column: 3 / span 1;
+}
+
+.thursday-grid-tiles {
+    grid-column: 4 / span 1;
+}
+
+.friday-grid-tiles {
+    grid-column: 5 / span 1;
+}
+
+.saturday-grid-tiles {
+    grid-column: 6 / span 1;
+}
+
+.sunday-grid-tiles {
+    grid-column: 7 / span 1;
 }
 
 .checkbox-person {
