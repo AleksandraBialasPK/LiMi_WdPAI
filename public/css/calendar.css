@@ -82,10 +82,11 @@ header > nav {
     cursor: pointer;
 }
 
-.content-nav {
+.change-date {
     min-width: 200px;
     display: flex;
     justify-content: space-evenly;
+    gap: 2em;
     align-items: center;
 }
 
