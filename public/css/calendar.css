@@ -108,6 +108,8 @@ button {
     border-radius: 10px;
     row-gap: 10px;
     overflow: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #046380  #FFFFFF;
 }
 
 .timeline {
