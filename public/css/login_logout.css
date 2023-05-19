@@ -39,9 +39,11 @@ body {
 .login-right-side {
     position: relative;
     float: right;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 60%;
     height: 100%;
-    text-align: center;
     overflow: hidden;
     background-color: #046380;
     z-index: -1;
