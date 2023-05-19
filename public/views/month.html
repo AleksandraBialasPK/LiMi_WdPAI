@@ -1,43 +1,46 @@
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" type="text/css" href="../css/calendar.css">
-    <title>LiMi Month view</title>
+    <link rel="stylesheet" type="text/css" href="../css/Montserrat.css">
+    <title>Month by Limi</title>
 </head>
 <body>
-<div class="content">
-    <nav>
-        <button>Day</button>
-        <button>Week</button>
-        <button>Month</button>
-        <button> < </button>
-        <p>Monday<p>
-        <button> > </button>
-    </nav>
-</div>
 <div class="sidebar-nav">
-    <button>Create new event</button>
-    <div class="event-type">
-        <input type="checkbox" id="Sports" name="Sports" checked>
-        <label for="Sports">Sports</label>
-        <input type="checkbox" id="Work/School" name="Work/School" checked>
-        <label for="Work/School">Work/School</label>
-        <input type="checkbox" id="House" name="House" checked>
-        <label for="House">House</label>
-        <input type="checkbox" id="Social" name="Social" checked>
-        <label for="Social">Social</label>
-        <input type="checkbox" id="Errands" name="Errands" checked>
-        <label for="Errands">Errands</label>
+    <button id="create-new-event-button">Create new event</button>
+    <div class="events">
+        <label for="Sports"><input type="checkbox" class="checkbox-event" id="sports" id="Sports" name="Sports" checked>Sports</label>
+        <label for="Work/School"><input type="checkbox" class="checkbox-event" id="work-school" id="Work/School"
+                                        name="Work/School" checked>Work/School</label>
+        <label for="House"><input type="checkbox" class="checkbox-event" id="house" id="House" name="House" checked>House</label>
+        <label for="Social"><input type="checkbox" class="checkbox-event" id="social" id="Social" name="Social" checked>Social</label>
+        <label for="Errands"><input type="checkbox" class="checkbox-event" id="errands" id="Errands" name="Errands"
+                                    checked>Errands</label>
     </div>
-    <div class="people">
-        <input type="checkbox" id="Person1" name="Person" checked>
-        <label for="Person1">Aleksandra</label>
-        <input type="checkbox" id="Person2" name="Person" checked>
-        <label for="Person2">Aleks</label>
-        <input type="checkbox" id="Person3" name="Person" checked>
-        <label for="Person3">Hanna</label>
-        <input type="checkbox" id="Person4" name="Person" checked>
-        <label for="Person4">Dawid</label>
+    <div class="events">
+        <label for="Person1"><input type="checkbox" class="checkbox-person" id="Person1" name="Person" checked>Aleksandra</label>
+        <label for="Person2"><input type="checkbox" class="checkbox-person" id="Person2" name="Person"
+                                    checked>Aleks</label>
+        <label for="Person3"><input type="checkbox" class="checkbox-person" id="Person3" name="Person"
+                                    checked>Hanna</label>
+        <label for="Person4"><input type="checkbox" class="checkbox-person" id="Person4" name="Person"
+                                    checked>Dawid</label>
     </div>
     <button>Log out</button>
 </div>
+<main>
+    <header>
+        <nav>
+            <div class="views-nav">
+                <button class="day-week-month-nav">Day</button>
+                <button class="day-week-month-nav">Week</button>
+                <button class="day-week-month-nav">Month</button>
+            </div>
+            <div class="content-nav push-right">
+                <a> < </a>
+                <p>Monday</p>
+                <a> > </a>
+            </div>
+        </nav>
+    </header>
+</main>
 </body>
