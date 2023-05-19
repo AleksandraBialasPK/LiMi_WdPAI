@@ -24,7 +24,7 @@ body {
     align-items: center;
     padding: 8%;
     gap: 25%;
-    background: #F7F7F5;
+    background: #FFFFFF;
     box-shadow: 2px 0px 4px rgba(0, 0, 0, 0.2);
 }
 
@@ -56,10 +56,6 @@ body {
     transition: .2s;
 }
 
-input.login-input:active {
-    border: none;
-}
-
 .input-container {
     display: flex;
     width: 100%;
@@ -69,11 +65,14 @@ input.login-input:active {
     color: #046380;
 }
 
-.login-input:active,
-.login-input:focus,
-.login-input:hover {
-    outline: none;
+.input-container:active,
+.input-container:focus,
+.input-container:hover {
     border-bottom-color: #95bab3;
+}
+
+input.login-input:focus {
+    outline: none;
 }
 
 .login-button-container {
