@@ -49,13 +49,24 @@ body {
 
 .login-input {
     border: none;
-    border-bottom: 2px solid #c3d8d4;
     background: none;
-    padding: 10px;
-    padding-left: 24px;
+    margin-left: 1em;
     font-weight: 700;
     width: 100%;
     transition: .2s;
+}
+
+input.login-input:active {
+    border: none;
+}
+
+.input-container {
+    display: flex;
+    width: 100%;
+    border-bottom: 2px solid #c3d8d4;
+    margin-bottom: 15px;
+    padding: 10px;
+    color: #046380;
 }
 
 .login-input:active,

@@ -89,6 +89,15 @@ header > nav {
     align-items: center;
 }
 
+.nav-arrows {
+    color: #515151;
+}
+
+a.nav-arrows:hover {
+    color: #444444;
+    transform: scale(1.1);
+}
+
 button {
     box-sizing: border-box;
     width: 30px;
