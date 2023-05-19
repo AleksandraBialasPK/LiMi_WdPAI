@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'Monteserrat';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Monteserrat'), local('Monteserrat'), url(../fonts/static/Montserrat-Regular.ttf) format('truetype');
+}
+
 * {
     box-sizing: border-box;
     font-family: "Monteserrat", sans-serif;
@@ -49,7 +56,7 @@ header > nav {
 }
 
 .push-right {
-    margin-right: 40%;
+    margin-right: 38%;
     margin-left: auto;
 }
 
