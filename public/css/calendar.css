@@ -120,6 +120,13 @@ button {
     cursor: pointer;
 }
 
+button:active,
+button:focus,
+button:hover {
+    transform: scale(1.1);
+    outline: none;
+}
+
 #create-new-event-button {
     width: 100px;
     height: 60px;
@@ -141,7 +148,7 @@ button {
 .timeline {
     grid-column: 1 / span 1;
     display: grid;
-    grid-template: repeat(24, 50px) / 1fr;
+    grid-template: repeat(24, 1fr) / 1fr;
     background-color: #FFFFFF;
 }
 
@@ -150,23 +157,21 @@ button {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    border: 2px solid crimson;
     height: 100px;
 }
 
 .day-grid-tiles {
+    display: grid;
     grid-column: 2 / span 1;
-    grid-template: repeat(24, 50px) / 1fr;
+    grid-template: repeat(24, 1fr) / 1fr;
 }
 
 .day-grid-tile {
-    grid-row: 1 / span 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100px;
     background-color: #FFFFFF;
-    border: 2px solid cornflowerblue;
+    height: 100px;
 }
 
 .week-grid-tiles {
