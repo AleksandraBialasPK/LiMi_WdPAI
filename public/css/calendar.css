@@ -79,6 +79,7 @@ header > nav {
     width: 5em;
     height: 2.5em;
     background: #FFFFFF;
+    border: 1px solid #046380;
     color: #303030;
     cursor: pointer;
 }
@@ -138,7 +139,7 @@ button:hover {
     height: 88%;
     display: grid;
     grid-template: 1fr / 1fr 17fr;
-    border-radius: 10px;
+    border-radius: 5px;
     row-gap: 10px;
     overflow: auto;
     scrollbar-width: thin;
@@ -151,7 +152,7 @@ button:hover {
 
 .day-view-container::-webkit-scrollbar-track {
     background: #FFFFFF;
-    border-radius: 0px 10px 10px 0px;
+    border-radius: 0px 5px 5px 0px;
 }
 
 .day-view-container::-webkit-scrollbar-thumb {
