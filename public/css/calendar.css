@@ -37,12 +37,15 @@ body {
 main {
     width: 80%;
     height: 100%;
-    padding: 10px 10px;
     float: left;
 }
 
 header {
-    height: 12%;
+    height: 14%;
+    position: relative;
+    padding: 10px 10px;
+    z-index: 1;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
 }
 
 header > nav {
@@ -135,7 +138,8 @@ button:hover {
 
 .calendar {
     box-sizing: border-box;
-    height: 88%;
+    padding: 0 10px 10px 10px;
+    height: 86%;
     display: grid;
     grid-template: 1fr / 1fr 17fr;
     border-radius: 5px;
@@ -187,6 +191,15 @@ button:hover {
     align-items: center;
     background-color: #FFFFFF;
     border-bottom: 2px solid #E2ECEA;
+}
+
+.days-of-the-week {
+    display: grid;
+    grid-column: 2 / span 1;
+    grid-template: repeat(24, 100px) / 1fr;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .week-grid-tiles {
