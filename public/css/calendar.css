@@ -134,28 +134,27 @@ button:hover {
     font-weight: 500;
 }
 
-.day-view-container {
+.calendar {
     box-sizing: border-box;
     height: 88%;
     display: grid;
     grid-template: 1fr / 1fr 17fr;
     border-radius: 5px;
-    row-gap: 10px;
     overflow: auto;
     scrollbar-width: thin;
     scrollbar-color: #E2ECEA  #FFFFFF;
 }
 
-.day-view-container::-webkit-scrollbar {
+.calendar::-webkit-scrollbar {
     width: 12px;
 }
 
-.day-view-container::-webkit-scrollbar-track {
+.calendar::-webkit-scrollbar-track {
     background: #FFFFFF;
     border-radius: 0px 5px 5px 0px;
 }
 
-.day-view-container::-webkit-scrollbar-thumb {
+.calendar::-webkit-scrollbar-thumb {
     background-color: #E2ECEA;
     border-radius: 20px;
     border: 3px solid #FFFFFF;
@@ -164,23 +163,23 @@ button:hover {
 .timeline {
     grid-column: 1 / span 1;
     display: grid;
-    grid-template: repeat(24, 1fr) / 1fr;
+    grid-template: repeat(23, 100px) / 1fr;
     background-color: #FFFFFF;
 }
 
-.hours {
+.hour {
+    padding-top: 110px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: flex-end;
     align-items: center;
-    height: 100px;
 }
 
 .day-grid-tiles {
+    box-sizing: border-box;
     display: grid;
     grid-column: 2 / span 1;
-    grid-template: repeat(24, 1fr) / 1fr;
-    gap: 2px;
+    grid-template: repeat(24, 100px) / 1fr;
 }
 
 .day-grid-tile {
@@ -188,7 +187,7 @@ button:hover {
     justify-content: center;
     align-items: center;
     background-color: #FFFFFF;
-    height: 100px;
+    border-bottom: 2px solid #E2ECEA;
 }
 
 .week-grid-tiles {
