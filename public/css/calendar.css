@@ -75,11 +75,20 @@ header > nav {
     justify-content: center;
     align-items: center;
     padding: 5px 5px;
+    border-radius: 2px;
     width: 5em;
     height: 2.5em;
     background: #FFFFFF;
     color: #303030;
     cursor: pointer;
+}
+
+.day-week-month-nav:hover,
+.day-week-month-nav:focus,
+.day-week-month-nav:active {
+    background-color: #046380;
+    color: #FFFFFF;
+    outline: none;
 }
 
 .change-date {
@@ -94,7 +103,7 @@ header > nav {
     color: #515151;
 }
 
-a.nav-arrows:hover {
+.nav-arrows:hover {
     color: #444444;
     transform: scale(1.1);
 }
@@ -130,20 +139,18 @@ button {
 }
 
 .timeline {
+    grid-column: 1 / span 1;
     display: grid;
     grid-template: repeat(24, 50px) / 1fr;
     background-color: #FFFFFF;
 }
 
-#timeline-day-view {
-    grid-column: 1 / span 1;
-    grid-row: 1 / 25;
-}
-
 .hours {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
+    border: 2px solid crimson;
     height: 100px;
 }
 
@@ -153,11 +160,13 @@ button {
 }
 
 .day-grid-tile {
+    grid-row: 1 / span 1;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100px;
     background-color: #FFFFFF;
+    border: 2px solid cornflowerblue;
 }
 
 .week-grid-tiles {
