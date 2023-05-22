@@ -43,7 +43,6 @@ main {
 }
 
 header {
-    height: 19%;
     position: relative;
     padding: 10px 10px;
     z-index: 1;
@@ -60,10 +59,12 @@ header > nav {
 }
 
 .just-header {
+    height: 16%;
     border-radius: 5px;
 }
 
 .header-with-days-of-the-week {
+    height: 19%;
     border-radius: 5px 5px 0 0;
 }
 
