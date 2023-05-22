@@ -181,11 +181,19 @@ button:hover {
 }
 
 .hour {
+    box-sizing: border-box;
     padding-top: 106px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
+    border: 1px solid #FFEA20;
+}
+
+#empty-hour {
+    padding: 0;
+    height: 50px;
+    border: 2px solid cadetblue;
 }
 
 .day-grid-tiles {
@@ -215,7 +223,7 @@ button:hover {
 .calendar-container {
     grid-column: 2 / span 1;
     display: grid;
-    grid-template-rows: 1fr 24fr;
+    grid-template-rows: 50px 24fr;
 }
 
 .days-of-the-week {
@@ -233,7 +241,6 @@ button:hover {
 }
 
 .week-grid-tiles {
-    background-color: #FFEA20;
     grid-row: 2 / span 1;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
