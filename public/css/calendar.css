@@ -326,6 +326,14 @@ button:hover {
     padding-bottom: 0.5em;
 }
 
+.month-event-container {
+    grid-row: 2 / span 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0.5em;
+}
+
 .checkbox-person {
     width: 30px;
     height: 30px;
