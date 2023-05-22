@@ -168,9 +168,16 @@ button:hover {
     font-size: small;
     grid-column: 1 / span 1;
     display: grid;
-    grid-template: repeat(23, 100px) / 1fr;
     background-color: #FFFFFF;
     border-radius: 5px 0 0 5px;
+}
+
+#timeline-day {
+    grid-template: repeat(23, 100px) / 1fr;
+}
+
+#timeline-week {
+    grid-template: repeat(24, 100px) / 1fr;
 }
 
 .hour {
@@ -212,20 +219,21 @@ button:hover {
 }
 
 .days-of-the-week {
-    background-color: #046380;
     grid-row: 1 / span 1;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
+    height: 50px;
 }
 
 .day-of-the-week {
     display: flex;
     justify-content: center;
-    /*align-items: center;*/
+    align-items: center;
+    background-color: #FFFFFF;
 }
 
 .week-grid-tiles {
-    grid-column: 2 / span 1;
+    background-color: #FFEA20;
     grid-row: 2 / span 1;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
