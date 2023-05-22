@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../css/calendar.css">
+    <link rel="stylesheet" type="text/css" href="../css/Montserrat.css">
+    <script src="https://kit.fontawesome.com/79d7c5829a.js" crossorigin="anonymous"></script>
+    <title>Week by Limi</title>
+</head>
+<body>
+<div class="sidebar-nav">
+    <button id="create-new-event-button">Create new event</button>
+    <div class="events">
+        <label for="Sports"><input type="checkbox" class="checkbox-event" id="sports" id="Sports" name="Sports" checked>Sports</label>
+        <label for="Work/School"><input type="checkbox" class="checkbox-event" id="work-school" id="Work/School"
+                                        name="Work/School" checked>Work/School</label>
+        <label for="House"><input type="checkbox" class="checkbox-event" id="house" id="House" name="House" checked>House</label>
+        <label for="Social"><input type="checkbox" class="checkbox-event" id="social" id="Social" name="Social" checked>Social</label>
+        <label for="Errands"><input type="checkbox" class="checkbox-event" id="errands" id="Errands" name="Errands"
+                                    checked>Errands</label>
+    </div>
+    <div class="events">
+        <label for="Person1"><input type="checkbox" class="checkbox-person" id="Person1" name="Person" checked>Aleksandra</label>
+        <label for="Person2"><input type="checkbox" class="checkbox-person" id="Person2" name="Person"
+                                    checked>Aleks</label>
+        <label for="Person3"><input type="checkbox" class="checkbox-person" id="Person3" name="Person"
+                                    checked>Hanna</label>
+        <label for="Person4"><input type="checkbox" class="checkbox-person" id="Person4" name="Person"
+                                    checked>Dawid</label>
+    </div>
+    <button>Log out</button>
+</div>
+<main>
+    <header>
+        <nav class="header-with-days-of-the-week">
+            <div class="views-nav">
+                <a class="day-week-month-nav">Day</a>
+                <a class="day-week-month-nav">Week</a>
+                <a class="day-week-month-nav">Month</a>
+            </div>
+            <div class="change-date push-right">
+                <a class="nav-arrows"><i class="fa-solid fa-chevron-left"></i></a>
+                <p>22.05.2023 - 28.05.2023</p>
+                <a class="nav-arrows"><i class="fa-solid fa-chevron-right"></i></a>
+            </div>
+        </nav>
+        <div class="days-of-the-week" id="week-view-days-of-the-week">
+            <div class="day-of-the-week">Monday</div>
+            <div class="day-of-the-week">Tuesday</div>
+            <div class="day-of-the-week">Wednesday</div>
+            <div class="day-of-the-week">Thursday</div>
+            <div class="day-of-the-week">Friday</div>
+            <div class="day-of-the-week">Saturday</div>
+            <div class="day-of-the-week">Sunday</div>
+        </div>
+    </header>
+    <section class="calendar-with-timeline-container">
+        <div class="timeline" id="timeline-week">
+            <div class="hour">01:00</div>
+            <div class="hour">02:00</div>
+            <div class="hour">03:00</div>
+            <div class="hour">04:00</div>
+            <div class="hour">05:00</div>
+            <div class="hour">06:00</div>
+            <div class="hour">07:00</div>
+            <div class="hour">08:00</div>
+            <div class="hour">09:00</div>
+            <div class="hour">10:00</div>
+            <div class="hour">11:00</div>
+            <div class="hour">12:00</div>
+            <div class="hour">13:00</div>
+            <div class="hour">14:00</div>
+            <div class="hour">15:00</div>
+            <div class="hour">16:00</div>
+            <div class="hour">17:00</div>
+            <div class="hour">18:00</div>
+            <div class="hour">19:00</div>
+            <div class="hour">20:00</div>
+            <div class="hour">21:00</div>
+            <div class="hour">22:00</div>
+            <div class="hour">23:00</div>
+        </div>
+        <div class="calendar-container">
+            <div class="week-grid-tiles">
+                <div class="monday-grid-tiles weekday-grid">
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile last-tile"></div>
+                </div>
+                <div class="tuesday-grid-tiles weekday-grid">
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile last-tile"></div>
+                </div>
+                <div class="wednesday-grid-tiles weekday-grid">
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile last-tile"></div>
+                </div>
+                <div class="thursday-grid-tiles weekday-grid">
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile last-tile"></div>
+                </div>
+                <div class="friday-grid-tiles weekday-grid">
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile last-tile"></div>
+                </div>
+                <div class="saturday-grid-tiles weekday-grid">
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile last-tile"></div>
+                </div>
+                <div class="sunday-grid-tiles weekday-grid">
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile"></div>
+                    <div class="week-grid-tile last-tile"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+</body>

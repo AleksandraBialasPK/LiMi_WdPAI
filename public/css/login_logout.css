@@ -1,0 +1,142 @@
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Montserrat'), local('Montserrat'), url(../fonts/static/Montserrat-Regular.ttf) format('truetype');
+}
+
+* {
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+    margin: 0 0;
+    padding: 0;
+}
+
+body {
+    position: absolute;
+    margin: 0 0;
+    width: 100%;
+    height: 100%;
+    min-width: 200vh;
+    min-height: 100vh;
+}
+
+.login-left-side {
+    box-sizing: border-box;
+    float: left;
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 8%;
+    gap: 25%;
+    background: #FFFFFF;
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.2);
+}
+
+.login-right-side {
+    position: relative;
+    float: right;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #046380;
+    z-index: -1;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6vh;
+    width: 50vh;
+}
+
+.login-input {
+    border: none;
+    background: none;
+    margin-left: 1em;
+    font-weight: 700;
+    width: 100%;
+    transition: .2s;
+}
+
+.input-container {
+    display: flex;
+    width: 100%;
+    border-bottom: 2px solid #c3d8d4;
+    margin-bottom: 15px;
+    padding: 10px;
+    color: #046380;
+}
+
+.input-container:active,
+.input-container:focus,
+.input-container:hover {
+    border-bottom-color: #95bab3;
+}
+
+input.login-input:focus {
+    outline: none;
+}
+
+.login-button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5vh;
+    padding: 1vh;
+    gap: 1vh;
+}
+
+button {
+    box-sizing: border-box;
+    width: 30px;
+    height: 40px;
+    min-width: 30%;
+    background: rgba(4, 99, 128, 0.95);
+    color: #F7F7F5;
+    border: 1px solid #046380;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:active,
+button:focus,
+button:hover {
+    transform: scale(1.1);
+    outline: none;
+}
+
+#sign-up-button {
+    background: rgba(4, 99, 128, 0.0);
+    color: rgba(4, 99, 128, 0.95);
+    border: 1px solid rgba(4, 99, 128, 0.0);
+}
+
+.logo {
+    width: 75%;
+}
+
+#dogs-image {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    min-width: 100%;
+}
+
+#pug-image {
+    height: 100%;
+    width: auto;
+}
+
+p {
+    color: #303030;
+    font-size: 1.5em;
+    text-align: center;
+}
