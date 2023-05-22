@@ -168,7 +168,7 @@ button:hover {
     font-size: small;
     grid-column: 1 / span 1;
     display: grid;
-    border-radius: 5px 0 0 5px;
+    border-radius: 5px 0 5px 5px;
     background-color: #FFFFFF;
 }
 
@@ -252,13 +252,15 @@ button:hover {
     align-items: center;
     height: 100px;
     background-color: #FFFFFF;
-    border: 1px solid #E2ECEA;
+    border-bottom: 1px solid #E2ECEA;
+    border-left: 2px solid #E2ECEA;
     border-radius: 5px;
 }
 
-.last-tile {
-    border-bottom: none;
+.first-tile {
+    border-top: none;
 }
+
 .weekday-grid {
     box-sizing: border-box;
     display: grid;
