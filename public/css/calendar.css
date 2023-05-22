@@ -312,6 +312,18 @@ button:hover {
     background-color: #FFFFFF;
     border: 1px solid #E2ECEA;
     border-radius: 5px;
+    display: grid;
+    grid-template: 2em 1fr / 1fr;
+}
+
+.num-of-the-day {
+    grid-row: 1 / span 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 0.8em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
 }
 
 .checkbox-person {
