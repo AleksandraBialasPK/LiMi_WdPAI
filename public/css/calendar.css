@@ -43,7 +43,7 @@ main {
 }
 
 header {
-    height: 14%;
+    height: 19%;
     position: relative;
     padding: 10px 10px;
     z-index: 1;
@@ -177,7 +177,7 @@ button:hover {
 }
 
 #timeline-week {
-    grid-template: 50px repeat(23, 100px) / 1fr;
+    grid-template: repeat(23, 100px) / 1fr;
 }
 
 .hour {
@@ -187,12 +187,6 @@ button:hover {
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-}
-
-#empty-hour {
-    padding: 0;
-    margin: 0;
-    height: 50px;
 }
 
 .day-grid-tiles {
@@ -222,14 +216,13 @@ button:hover {
 .calendar-container {
     grid-column: 2 / span 1;
     display: grid;
-    grid-template-rows: 50px 24fr;
+    grid-template-rows: 24fr;
 }
 
 .days-of-the-week {
-    grid-row: 1 / span 1;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    height: 50px;
+    height: 32px;
 }
 
 .day-of-the-week {
@@ -240,7 +233,6 @@ button:hover {
 }
 
 .week-grid-tiles {
-    grid-row: 2 / span 1;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
 }
@@ -253,7 +245,8 @@ button:hover {
     height: 100px;
     background-color: #FFFFFF;
     border-bottom: 1px solid #E2ECEA;
-    border-left: 2px solid #E2ECEA;
+    border-left: 1px solid #E2ECEA;
+    border-right: 1px solid #E2ECEA;
     border-radius: 5px;
 }
 
