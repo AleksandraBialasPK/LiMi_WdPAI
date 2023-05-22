@@ -168,8 +168,8 @@ button:hover {
     font-size: small;
     grid-column: 1 / span 1;
     display: grid;
-    background-color: #FFFFFF;
     border-radius: 5px 0 0 5px;
+    background-color: #FFFFFF;
 }
 
 #timeline-day {
@@ -177,23 +177,22 @@ button:hover {
 }
 
 #timeline-week {
-    grid-template: repeat(24, 100px) / 1fr;
+    grid-template: 50px repeat(23, 100px) / 1fr;
 }
 
 .hour {
     box-sizing: border-box;
-    padding-top: 106px;
+    margin-top: 106px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    border: 1px solid #FFEA20;
 }
 
 #empty-hour {
     padding: 0;
+    margin: 0;
     height: 50px;
-    border: 2px solid cadetblue;
 }
 
 .day-grid-tiles {
@@ -247,16 +246,23 @@ button:hover {
 }
 
 .week-grid-tile {
+    box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100px;
     background-color: #FFFFFF;
+    border: 1px solid #E2ECEA;
+    border-radius: 5px;
 }
 
+.last-tile {
+    border-bottom: none;
+}
 .weekday-grid {
+    box-sizing: border-box;
     display: grid;
-    grid-template: repeat(24, 50px) / 1fr;
+    grid-template: repeat(24, 100px) / 1fr;
 }
 
 .monday-grid-tiles {
