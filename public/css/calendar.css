@@ -57,7 +57,14 @@ header > nav {
     width: 100%;
     height: 60px;
     background: #FFFFFF;
+}
+
+.just-header {
     border-radius: 5px;
+}
+
+.header-with-days-of-the-week {
+    border-radius: 5px 5px 0 0;
 }
 
 .push-right {
@@ -223,13 +230,15 @@ button:hover {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     height: 32px;
+    padding-left: 55px;
+    background-color: #FFFFFF;
+    border-radius: 0 0 5px 5px;
 }
 
 .day-of-the-week {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #FFFFFF;
 }
 
 .week-grid-tiles {
