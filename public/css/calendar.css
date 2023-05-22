@@ -138,7 +138,7 @@ button:hover {
     height: 60px;
 }
 
-.calendar {
+.calendar-with-timeline-container {
     box-sizing: border-box;
     padding: 0 10px 10px 10px;
     height: 86%;
@@ -149,16 +149,16 @@ button:hover {
     scrollbar-color: #E2ECEA  #FFFFFF;
 }
 
-.calendar::-webkit-scrollbar {
+.calendar-with-timeline-container::-webkit-scrollbar {
     width: 12px;
 }
 
-.calendar::-webkit-scrollbar-track {
+.calendar-with-timeline-container::-webkit-scrollbar-track {
     background: #FFFFFF;
     border-radius: 0px 5px 5px 0px;
 }
 
-.calendar::-webkit-scrollbar-thumb {
+.calendar-with-timeline-container::-webkit-scrollbar-thumb {
     background-color: #E2ECEA;
     border-radius: 20px;
     border: 3px solid #FFFFFF;
@@ -205,17 +205,28 @@ button:hover {
     border-radius: 0 0 5px 0;
 }
 
-.days-of-the-week {
-    display: grid;
+.calendar-container {
     grid-column: 2 / span 1;
-    grid-template: repeat(24, 100px) / 1fr;
+    display: grid;
+    grid-template-rows: 1fr 24fr;
+}
+
+.days-of-the-week {
+    background-color: #046380;
+    grid-row: 1 / span 1;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.day-of-the-week {
     display: flex;
     justify-content: center;
-    align-items: center;
+    /*align-items: center;*/
 }
 
 .week-grid-tiles {
     grid-column: 2 / span 1;
+    grid-row: 2 / span 1;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
 }
