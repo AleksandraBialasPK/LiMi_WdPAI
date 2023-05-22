@@ -230,9 +230,12 @@ button:hover {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     height: 32px;
-    padding-left: 55px;
     background-color: #FFFFFF;
     border-radius: 0 0 5px 5px;
+}
+
+#week-view-days-of-the-week {
+    padding-left: 55px;
 }
 
 .day-of-the-week {
@@ -295,6 +298,19 @@ button:hover {
 
 .sunday-grid-tiles {
     grid-column: 7 / span 1;
+}
+
+.month-calendar-container {
+    padding: 5px 10px 10px 10px;
+    display: grid;
+    grid-template: repeat(5, 1fr)/ repeat(7, 1fr);
+    height: 81%;
+}
+
+.month-grid-tile {
+    background-color: #FFFFFF;
+    border: 1px solid #E2ECEA;
+    border-radius: 5px;
 }
 
 .checkbox-person {
