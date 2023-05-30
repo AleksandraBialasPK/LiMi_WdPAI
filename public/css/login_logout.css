@@ -8,53 +8,56 @@
 * {
     font-family: 'Montserrat', sans-serif;
     box-sizing: border-box;
-    margin: 0 0;
-    padding: 0;
 }
 
 body {
-    position: absolute;
+    display: grid;
+    grid-template: 1fr / 2fr 3fr;
+    position: static;
     margin: 0 0;
     width: 100%;
     height: 100%;
-    min-width: 200vh;
-    min-height: 100vh;
+    min-width: 100%;
+    min-height: 100%;
 }
 
 .login-left-side {
-    box-sizing: border-box;
-    float: left;
-    width: 40%;
+    grid-column: 1 / span 1;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 8%;
-    gap: 25%;
+    padding: 0 8%;
     background: #FFFFFF;
     box-shadow: 2px 0 4px rgba(0, 0, 0, 0.2);
 }
 
 .login-right-side {
-    position: relative;
-    float: right;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 60%;
+    grid-column: 2 / span 1;
     height: 100%;
-    overflow: hidden;
+    display: grid;
     background-color: #046380;
     z-index: -1;
 }
 
-.login-form {
+form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 6vh;
-    width: 50vh;
+    padding: 0 50px;
+    width: 85%;
+    height: 50%;
+}
+
+.login-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 5vh;
+    width: 100%;
+    height: auto;
 }
 
 .login-input {
@@ -64,15 +67,26 @@ body {
     font-weight: 700;
     width: 100%;
     transition: .2s;
+    color: #303030;
 }
 
 .input-container {
     display: flex;
     width: 100%;
     border-bottom: 2px solid #c3d8d4;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     padding: 10px;
     color: #046380;
+}
+
+input[type='password'] {
+    color: #515151;
+    letter-spacing: 0.1em;
+}
+
+input[type='text'] {
+    color: #515151;
+    letter-spacing: 0.05em;
 }
 
 .input-container:active,
@@ -89,14 +103,14 @@ input.login-input:focus {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 5vh;
+    margin: 1vh;
     padding: 1vh;
     gap: 1vh;
 }
 
 button {
     box-sizing: border-box;
-    width: 30px;
+    width: 80px;
     height: 40px;
     min-width: 30%;
     background: rgba(4, 99, 128, 0.95);
@@ -120,14 +134,15 @@ button:hover {
 }
 
 .logo {
-    width: 75%;
+    width: 60%;
+    height: auto;
+    margin: 100px 0 100px 0;
 }
 
 #dogs-image {
-    width: 100%;
-    height: auto;
     max-width: 100%;
-    min-width: 100%;
+    max-height: 100vh;
+    margin: auto;
 }
 
 #pug-image {
