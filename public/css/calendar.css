@@ -105,6 +105,7 @@ header > nav {
 }
 
 .change-date {
+    color: #303030;
     min-width: 200px;
     display: flex;
     justify-content: space-evenly;
@@ -189,6 +190,7 @@ button:hover {
 }
 
 .hour {
+    color: #303030;
     box-sizing: border-box;
     margin-top: 106px;
     display: flex;
@@ -349,6 +351,7 @@ button:hover {
 }
 
 .events {
+    color: #303030;
     display: flex;
     flex-direction: column;
     justify-content: center;
