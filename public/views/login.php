@@ -7,7 +7,16 @@
 <body>
     <div class="login-left-side">
         <img class="logo" src="public/img/logo-no-background.svg" alt="LiMi logo">
-        <form>
+        <form method="POST" action="login">
+            <div class="messages">
+                <?php if(isset($messages))
+                {
+                    foreach($messages as $message){
+                        echo $message;
+                    }
+                }
+                ?>
+            </div>
             <div class="login-form-container">
                 <div class="input-container">
                     <i class="fa-solid fa-user"></i>
@@ -19,7 +28,7 @@
                 </div>
             </div>
             <div class="login-button-container">
-                <button>Sign In</button>
+                <button type="submit">Sign In</button>
                 <button id="sign-up-button">Sign Up</button>
             </div>
         </form>

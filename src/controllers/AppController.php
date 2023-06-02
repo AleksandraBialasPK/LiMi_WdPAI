@@ -1,11 +1,13 @@
 <?php
 
 class AppController {
-    protected function render($template = null) {
-        $template_path = 'public/views/'.$template.'.html';
-        $output = "File not found";
+    protected function render(string $template = null, array $variables = []) {
+        $template_path = 'public/views/'.$template.'.php';
+        $output = "File not found :(";
 
         if (file_exists($template_path)) {
+            extract($variables);
+
             ob_start();
             include $template_path;
             $output = ob_get_clean();
