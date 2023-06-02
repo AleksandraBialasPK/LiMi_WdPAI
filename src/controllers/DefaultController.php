@@ -8,7 +8,7 @@ class DefaultController extends AppController {
         $this->render('login');
     }
 
-    public function calendar() {
-        $this->render('calendar');
+    public function day() {
+        $this->render('day');
     }
 }
