@@ -1,6 +1,24 @@
 <?php
 
 class AppController {
+
+    private  $request;
+
+    public function __construct($request)
+    {
+        $this->request = $_SERVER['REQUEST_METHOD'];
+    }
+
+    protected function isPost(): bool
+    {
+        return $this->request === $_POST;
+    }
+
+    protected function isGet(): bool
+    {
+        return $this->request === $_GET;
+    }
+
     protected function render(string $template = null, array $variables = []) {
         $template_path = 'public/views/'.$template.'.php';
         $output = "File not found :(";

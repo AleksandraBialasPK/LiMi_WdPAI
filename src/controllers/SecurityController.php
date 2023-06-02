@@ -9,6 +9,10 @@ class SecurityController extends AppController
     {
         $user = new User("dipper@gmail.com", "mysteryShack", "Dipper", "Pines");
 
+        if($this->isPost()) {
+         return $this->login('login');
+        }
+
         $email = $_POST["email"];
         $password = $_POST["password"];
 
