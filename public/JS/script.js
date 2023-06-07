@@ -3,6 +3,8 @@ const daysContainer = document.querySelector(".days"),
     prevMonthBtn = document.querySelector(".prev-month-btn"),
     month = document.querySelector(".month"),
     day = document.querySelector(".day"),
+    prevDayBtn = document.querySelector(".prev-day-btn"),
+    nextDayBtn = document.querySelector(".next-day-btn"),
     todayBtn = document.querySelector(".today-btn");
 
 const days = [
@@ -30,23 +32,59 @@ const months = [
     "December",
 ];
 
-// get current date
+monthsWith30Days = ["February", "April", "June", "September", "November"];
+monthsWith31Days = ["January", "March", "May", "July", "August", "October", "December"];
+
 const date = new Date();
 
 let currentDay = date.getDay();
-
 let currentDate = date.getDate();
-// get current month
 let currentMonth = date.getMonth();
-
-// get current year
 let currentYear = date.getFullYear();
+let currentMonthName = months[currentMonth];
 
 function renderDay() {
     day.innerHTML = `${days[currentDay]} ${currentDate} ${months[currentMonth]} ${currentYear}`;
 }
 
-// function to render days
+renderDay();
+
+nextDayBtn.addEventListener("click", () => {
+    currentDay++;
+    currentDate++;
+
+    if (currentDate > 30) {
+        currentDate = 1;
+        currentMonth++;
+    }
+
+    if (currentDay > 6) {
+        currentDay = 0;
+    }
+    renderDay();
+});
+
+prevDayBtn.addEventListener("click", () => {
+    currentDay--;
+    currentDate--;
+    let prevMonth = currentMonth-1;
+
+    if (currentDate < 1 && monthsWith30Days.includes(months[prevMonth])) {
+        currentDate = 30;
+        currentMonth--;
+    }
+    else if (currentDate < 1 && monthsWith31Days.includes(months[prevMonth])){
+        currentDate = 31;
+        currentMonth--;
+    }
+
+    if (currentDay < 0) {
+        currentDay = 6;
+    }
+    renderDay();
+});
+
+// function to render days in month
 function renderCalendar() {
     // get prev month current month and next month days
     date.setDate(1);
@@ -95,8 +133,6 @@ function renderCalendar() {
     hideTodayBtn();
     daysContainer.innerHTML = days;
 }
-
-renderDay();
 renderCalendar();
 
 nextMonthBtn.addEventListener("click", () => {
