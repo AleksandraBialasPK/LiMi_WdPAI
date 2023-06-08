@@ -34,10 +34,8 @@ monthsWith31Days = ["January", "March", "May", "July", "August", "October", "Dec
 const date = new Date();
 
 let currentDay = date.getDay();
-// let currentDate = date.getDate();
-// let currentMonth = date.getMonth();
-let currentMonth = 0;
-let currentDate = 5;
+let currentDate = date.getDate();
+let currentMonth = date.getMonth();
 let currentYear = date.getFullYear();
 
 function renderDay() {
