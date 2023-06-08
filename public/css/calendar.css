@@ -116,9 +116,9 @@ header > nav {
 .change-date {
     color: #303030;
     min-width: 200px;
+    width: 25%;
     display: flex;
     justify-content: space-evenly;
-    gap: 2em;
     align-items: center;
 }
 
@@ -132,6 +132,7 @@ header > nav {
 }
 
 .day-with-date {
+    width: 80%;
     display: flex;
     text-align: center;
     justify-content: center;
