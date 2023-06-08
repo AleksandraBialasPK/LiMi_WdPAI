@@ -131,6 +131,12 @@ header > nav {
     transform: scale(1.1);
 }
 
+.day-with-date {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
 button {
     box-sizing: border-box;
     width: 80px;

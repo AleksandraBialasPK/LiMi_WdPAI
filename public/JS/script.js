@@ -2,9 +2,6 @@ const daysContainer = document.querySelector(".days"),
     nextMonthBtn = document.querySelector(".next-month-btn"),
     prevMonthBtn = document.querySelector(".prev-month-btn"),
     month = document.querySelector(".month"),
-    day = document.querySelector(".day"),
-    prevDayBtn = document.querySelector(".prev-day-btn"),
-    nextDayBtn = document.querySelector(".next-day-btn"),
     todayBtn = document.querySelector(".today-btn");
 
 const days = [
@@ -37,17 +34,9 @@ monthsWith31Days = ["January", "March", "May", "July", "August", "October", "Dec
 
 const date = new Date();
 
-let currentDay = date.getDay();
 let currentDate = date.getDate();
 let currentMonth = date.getMonth();
 let currentYear = date.getFullYear();
-let currentMonthName = months[currentMonth];
-
-function renderDay() {
-    day.innerHTML = `${days[currentDay]} ${currentDate} ${months[currentMonth]} ${currentYear}`;
-}
-
-renderDay();
 
 function isNextOrPrevYear(month){
     if(month++ > 11){
@@ -59,47 +48,6 @@ function isNextOrPrevYear(month){
         month = 11;
     }
 }
-
-nextDayBtn.addEventListener("click", () => {
-    currentDay++;
-    currentDate++;
-
-    if (currentDate > 30  && monthsWith30Days.includes(months[currentMonth])) {
-        currentDate = 1;
-        currentMonth++;
-        isNextOrPrevYear(currentMonth);
-    }
-    else if (currentDate > 31 && monthsWith31Days.includes(months[currentMonth])){
-        currentDate = 1;
-        currentMonth++;
-        isNextOrPrevYear(currentMonth);
-    }
-
-    if (currentDay > 6) {
-        currentDay = 0;
-    }
-    renderDay();
-});
-
-prevDayBtn.addEventListener("click", () => {
-    currentDay--;
-    currentDate--;
-    let prevMonth = currentMonth-1;
-
-    if (currentDate < 1 && monthsWith30Days.includes(months[prevMonth])) {
-        currentDate = 30;
-        currentMonth--;
-    }
-    else if (currentDate < 1 && monthsWith31Days.includes(months[prevMonth])){
-        currentDate = 31;
-        currentMonth--;
-    }
-
-    if (currentDay < 0) {
-        currentDay = 6;
-    }
-    renderDay();
-});
 
 // function to render days in month
 function renderCalendar() {

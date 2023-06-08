@@ -22,11 +22,9 @@ monthsWith31Days = ["January", "March", "May", "July", "August", "October", "Dec
 
 const date = new Date();
 
-let currentDay = date.getDay();
 let currentDate = date.getDate();
 let currentMonth = date.getMonth();
 let currentYear = date.getFullYear();
-let currentMonthName = months[currentMonth];
 
 function renderWeek() {
     week.innerHTML = `${currentDate}.${currentMonth+1} - ${currentDate+7}.${currentMonth+1} ${currentYear}`;
