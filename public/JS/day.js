@@ -34,8 +34,10 @@ monthsWith31Days = ["January", "March", "May", "July", "August", "October", "Dec
 const date = new Date();
 
 let currentDay = date.getDay();
-let currentDate = date.getDate();
-let currentMonth = date.getMonth();
+// let currentDate = date.getDate();
+let currentDate = 29;
+// let currentMonth = date.getMonth();
+let currentMonth = 11;
 let currentYear = date.getFullYear();
 let currentMonthName = months[currentMonth];
 
@@ -48,14 +50,20 @@ renderDay();
 function isLeapYear(year) {
     return ((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0);
 }
-function isNextOrPrevYear(month){
-    if(month++ > 11){
+
+function nextMonth() {
+    currentDate = 1;
+    currentMonth++;
+}
+
+function checkIfNextDayAndIncrement(month){
+    if((month+1) > 11){
+        currentDate = 1;
+        currentMonth = 0;
         currentYear++;
-        month = 0;
     }
-    else if(month-- < 0){
-        currentYear--;
-        month = 11;
+    else {
+        nextMonth()
     }
 }
 
@@ -64,9 +72,20 @@ nextDayBtn.addEventListener("click", () => {
     currentDate++;
 
     if (monthsWith30Days.includes(months[currentMonth]) && currentDate > 30) {
-        currentDate = 1;
-        currentMonth++;
-        isNextOrPrevYear(currentMonth);
+        nextMonth();
+    }
+    else if (monthsWith31Days.includes(months[currentMonth]) && currentDate > 31) {
+        checkIfNextDayAndIncrement(currentMonth);
+    }
+    else if (currentMonth === 1){
+        if(isLeapYear(currentYear)) {
+            if(currentDate > 29) {
+                nextMonth();
+            }
+        }
+        if(currentDate > 28){
+            nextMonth();
+        }
     }
 
     if (currentDay > 6) {
@@ -84,13 +103,15 @@ prevDayBtn.addEventListener("click", () => {
         if (monthsWith30Days.includes(months[prevMonth])) {
             currentDate = 30;
             currentMonth--;
+            isNextOrPrevYear(currentMonth);
         }
         else if (monthsWith31Days.includes(months[prevMonth])){
             currentDate = 31;
             currentMonth--;
+            isNextOrPrevYear(currentMonth);
         }
         else{
-            if(isLeapYear()) {
+            if(isLeapYear(currentYear)) {
                 currentDate = 29;
                 currentMonth--;
             }
