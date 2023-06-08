@@ -32,7 +32,7 @@ const months = [
     "December",
 ];
 
-monthsWith30Days = ["February", "April", "June", "September", "November"];
+monthsWith30Days = ["April", "June", "September", "November"];
 monthsWith31Days = ["January", "March", "May", "July", "August", "October", "December"];
 
 const date = new Date();
@@ -49,13 +49,30 @@ function renderDay() {
 
 renderDay();
 
+function isNextOrPrevYear(month){
+    if(month++ > 11){
+        currentYear++;
+        month = 0;
+    }
+    else if(month-- < 0){
+        currentYear--;
+        month = 11;
+    }
+}
+
 nextDayBtn.addEventListener("click", () => {
     currentDay++;
     currentDate++;
 
-    if (currentDate > 30) {
+    if (currentDate > 30  && monthsWith30Days.includes(months[currentMonth])) {
         currentDate = 1;
         currentMonth++;
+        isNextOrPrevYear(currentMonth);
+    }
+    else if (currentDate > 31 && monthsWith31Days.includes(months[currentMonth])){
+        currentDate = 1;
+        currentMonth++;
+        isNextOrPrevYear(currentMonth);
     }
 
     if (currentDay > 6) {
