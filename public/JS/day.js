@@ -34,12 +34,9 @@ monthsWith31Days = ["January", "March", "May", "July", "August", "October", "Dec
 const date = new Date();
 
 let currentDay = date.getDay();
-// let currentDate = date.getDate();
-let currentDate = 29;
-// let currentMonth = date.getMonth();
-let currentMonth = 11;
+let currentDate = date.getDate();
+let currentMonth = date.getMonth();
 let currentYear = date.getFullYear();
-let currentMonthName = months[currentMonth];
 
 function renderDay() {
     day.innerHTML = `${days[currentDay]} <br> ${currentDate} ${months[currentMonth]} ${currentYear}`;
@@ -48,7 +45,7 @@ function renderDay() {
 renderDay();
 
 function isLeapYear(year) {
-    return ((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0);
+    return (year % 100 === 0) ? (year % 400 === 0) : (year % 4 === 0);
 }
 
 function nextMonth() {
@@ -83,7 +80,7 @@ nextDayBtn.addEventListener("click", () => {
                 nextMonth();
             }
         }
-        if(currentDate > 28){
+        else if (currentDate > 28){
             nextMonth();
         }
     }
@@ -110,7 +107,7 @@ prevDayBtn.addEventListener("click", () => {
             currentMonth--;
             isNextOrPrevYear(currentMonth);
         }
-        else{
+        else if (currentMonth === 1){
             if(isLeapYear(currentYear)) {
                 currentDate = 29;
                 currentMonth--;
