@@ -1,7 +1,16 @@
 const day = document.querySelector(".day"),
     prevDayBtn = document.querySelector(".prev-day-btn"),
-    nextDayBtn = document.querySelector(".next-day-btn"),
-    todayBtn = document.querySelector(".today-btn");
+    nextDayBtn = document.querySelector(".next-day-btn");
+
+const days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+];
 
 const months = [
     "January",
