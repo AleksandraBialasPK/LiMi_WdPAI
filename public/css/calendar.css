@@ -209,13 +209,6 @@ button:hover {
     display: grid;
     border-radius: 5px 0 5px 5px;
     background-color: #FFFFFF;
-}
-
-#timeline-day {
-    grid-template: repeat(23, 100px) / 1fr;
-}
-
-#timeline-week {
     grid-template: repeat(23, 100px) / 1fr;
 }
 

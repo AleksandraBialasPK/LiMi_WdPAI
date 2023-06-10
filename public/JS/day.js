@@ -1,6 +1,7 @@
 const day = document.querySelector(".day"),
     prevDayBtn = document.querySelector(".prev-day-btn"),
-    nextDayBtn = document.querySelector(".next-day-btn");
+    nextDayBtn = document.querySelector(".next-day-btn"),
+    timelineContainer = document.getElementById("timeline-day");
 
 const days = [
     "Sunday",
@@ -40,7 +41,6 @@ let currentYear = date.getFullYear();
 function renderDay() {
     day.innerHTML = `${days[currentDay]} <br> ${currentDate} ${months[currentMonth]} ${currentYear}`;
 }
-
 renderDay();
 
 function isLeapYear(year) {
@@ -126,3 +126,14 @@ prevDayBtn.addEventListener("click", () => {
     }
     renderDay();
 });
+
+function generateTimeline() {
+    let hours = "";
+
+    for (let i = 1; i <= 23; i++) {
+            hours += `<div class="hour">${i}:00</div>`;
+    }
+    timelineContainer.innerHTML = hours;
+}
+
+generateTimeline();
