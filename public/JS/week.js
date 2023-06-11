@@ -1,7 +1,15 @@
 const week = document.querySelector(".week"),
     prevWeekBtn = document.querySelector(".prev-week-btn"),
     nextWeekBtn = document.querySelector(".next-week-btn"),
+    daysForTheWeekContainerMonday = document.querySelector(".monday-grid-tiles"),
+    daysForTheWeekContainerTuesday = document.querySelector(".tuesday-grid-tiles"),
+    daysForTheWeekContainerWednesday = document.querySelector(".wednesday-grid-tiles"),
+    daysForTheWeekContainerThursday =  document.querySelector(".thursday-grid-tiles"),
+    daysForTheWeekContainerFriday =  document.querySelector(".friday-grid-tiles"),
+    daysForTheWeekContainerSaturday =  document.querySelector(".saturday-grid-tiles"),
+    daysForTheWeekContainerSunday =  document.querySelector(".sunday-grid-tiles"),
     timelineContainer = document.querySelector(".timeline");
+
 
 const months = [
     "January",
@@ -54,16 +62,22 @@ function generateTimeline() {
 
 generateTimeline();
 
-function generateDays() {
+function generateDaysForWeek() {
     let days = "";
 
-    days += `<div class="day-grid-tile" id="first-day-tile"></div>`;
-    for (let i = 0; i <= 21; i++) {
-        days += `<div class="day-grid-tile"></div>`;
+    for (let i = 0; i <= 22; i++) {
+        days += `<div class="week-grid-tile"></div>`;
     }
-    days += `<div class="day-grid-tile" id="last-day-tile"></div>`;
-    daysContainer.innerHTML = days;
+    days += `<div class="week-grid-tile last-tile"></div>`;
+
+    daysForTheWeekContainerMonday.innerHTML = days;
+    daysForTheWeekContainerTuesday.innerHTML = days;
+    daysForTheWeekContainerWednesday.innerHTML = days;
+    daysForTheWeekContainerThursday.innerHTML = days;
+    daysForTheWeekContainerFriday.innerHTML = days;
+    daysForTheWeekContainerSaturday.innerHTML = days;
+    daysForTheWeekContainerSunday.innerHTML = days;
 
 }
 
-generateDays();
+generateDaysForWeek();
