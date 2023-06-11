@@ -34,9 +34,11 @@ const date = new Date();
 let currentDate = date.getDate();
 let currentMonth = date.getMonth();
 let currentYear = date.getFullYear();
+const firstDay = new Date(date.setDate(currentDate - date.getDay()));
+const lastDay = new Date(date.setDate(currentDate - date.getDay() + 6));
 
 function renderWeek() {
-    week.innerHTML = `${currentDate}.${currentMonth+1} - ${currentDate+7}.${currentMonth+1} ${currentYear}`;
+    week.innerHTML = `${firstDay}.${currentMonth+1} - ${lastDay}.${currentMonth+1}`;
 }
 
 prevWeekBtn.addEventListener ("click", () => {
