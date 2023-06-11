@@ -2,7 +2,7 @@ const day = document.querySelector(".day"),
     prevDayBtn = document.querySelector(".prev-day-btn"),
     nextDayBtn = document.querySelector(".next-day-btn"),
     daysContainer = document.querySelector(".day-grid-tiles"),
-    timelineContainer = document.getElementById("timeline-day");
+    timelineContainer = document.querySelector(".timeline");
 
 const days = [
     "Sunday",

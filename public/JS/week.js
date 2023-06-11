@@ -1,6 +1,7 @@
 const week = document.querySelector(".week"),
     prevWeekBtn = document.querySelector(".prev-week-btn"),
-    nextWeekBtn = document.querySelector(".next-week-btn");
+    nextWeekBtn = document.querySelector(".next-week-btn"),
+    timelineContainer = document.querySelector(".timeline");
 
 const months = [
     "January",
@@ -41,3 +42,28 @@ nextWeekBtn.addEventListener ("click", () => {
 });
 
 renderWeek();
+
+function generateTimeline() {
+    let hours = "";
+
+    for (let i = 1; i <= 23; i++) {
+        hours += `<div class="hour">${i}:00</div>`;
+    }
+    timelineContainer.innerHTML = hours;
+}
+
+generateTimeline();
+
+function generateDays() {
+    let days = "";
+
+    days += `<div class="day-grid-tile" id="first-day-tile"></div>`;
+    for (let i = 0; i <= 21; i++) {
+        days += `<div class="day-grid-tile"></div>`;
+    }
+    days += `<div class="day-grid-tile" id="last-day-tile"></div>`;
+    daysContainer.innerHTML = days;
+
+}
+
+generateDays();
