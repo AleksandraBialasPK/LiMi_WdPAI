@@ -35,20 +35,51 @@ let currentDate = date.getDate();
 let currentMonth = date.getMonth();
 let currentYear = date.getFullYear();
 
-let firstDay = currentDate - date.getDay(); // First day is the day of the month - the day of the week
-var lastDay = firstDay + 6; // last day is the first day + 6
+let firstDay = currentDate - date.getDay();
+let lastDay = firstDay + 6;
 
 
 function renderWeek() {
-    week.innerHTML = `${firstDay}.${currentMonth}.${currentYear} - ${lastDay}.${currentMonth}.${currentYear}`;
+    week.innerHTML = `${firstDay}  ${months[currentMonth]}  ${currentYear} - ${lastDay}  ${months[currentMonth]}  ${currentYear}`;
 }
-
 renderWeek();
 
-function nextWeek(date, weeks) {
+function isLeapYear(year) {
+    return (year % 100 === 0) ? (year % 400 === 0) : (year % 4 === 0);
+}
+
+function nextWeek() {
+    firstDay+=7;
+    if(monthsWith30Days.includes(months[currentMonth]) && firstDay > 30){
+        currentMonth++;
+        firstDay -= 30;
+    }
+    else if(monthsWith31Days.includes(months[currentMonth]) && firstDay > 31){
+        currentMonth++;
+        firstDay -= 31;
+    }
+    else if ((currentMonth) === 1){
+        if(isLeapYear(currentYear) && firstDay > 29) {
+            currentMonth++;
+            firstDay -=29;
+        }
+        else if(firstDay > 28) {
+            currentMonth++;
+            firstDay -=28;
+        }
+    }
+    renderWeek();
+}
+
+function prevWeek(){
+    firstDay-=7;
+    if(firstDay < 1){
+        currentMonth--;
+    }
 }
 
 prevWeekBtn.addEventListener ("click", () => {
+    prevWeek();
     renderWeek();
 });
 
