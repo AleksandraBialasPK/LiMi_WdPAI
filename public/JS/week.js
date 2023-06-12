@@ -54,6 +54,7 @@ function checkIfNewYearAndIncrement(month){
         lastDay = firstDay + 6;
         currentMonth = 0;
         currentYear++;
+        lastDayMonth = currentMonth;
     }
     else {
         currentMonth++;
@@ -97,6 +98,9 @@ function checkIfLastDayForNextMonthIsMoreThan30or31(){
     else if(monthsWith31Days.includes(months[currentMonth]) && lastDay > 31){
         lastDayMonth = currentMonth+1;
         lastDay -= 31;
+        if(lastDayMonth > 11){
+            lastDayMonth = 0;
+        }
     }
     else if ((currentMonth) === 1){
         if(isLeapYear(currentYear) && lastDay > 29) {
