@@ -12,35 +12,35 @@ const week = document.querySelector(".week"),
 
 
 const months = [
-    "January",
-    "February",
-    "March",
-    "April",
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
     "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sept",
+    "Oct",
+    "Nov",
+    "Dec",
 ];
 
-monthsWith30Days = ["April", "June", "September", "November"];
-monthsWith31Days = ["January", "March", "May", "July", "August", "October", "December"];
+monthsWith30Days = ["Apr", "Jun", "Sept", "Nov"];
+monthsWith31Days = ["Jan", "Mar", "May", "Jul", "Aug", "Oct", "Dec"];
 
 const date = new Date();
 
 let currentDate = date.getDate();
 let currentMonth = date.getMonth();
 let currentYear = date.getFullYear();
-
+let lastDayMonth = currentMonth;
 let firstDay = currentDate - date.getDay();
 let lastDay = firstDay + 6;
 
 
 function renderWeek() {
-    week.innerHTML = `${firstDay}  ${months[currentMonth]}  ${currentYear} - ${lastDay}  ${months[currentMonth]}  ${currentYear}`;
+    week.innerHTML = `${firstDay}  ${months[currentMonth]}  ${currentYear} - ${lastDay}  ${months[lastDayMonth]}  ${currentYear}`;
 }
 renderWeek();
 
@@ -51,17 +51,22 @@ function isLeapYear(year) {
 function checkIfNewYearAndIncrement(month){
     if((month+1) > 11){
         firstDay -= 31;
+        lastDay = firstDay + 6;
         currentMonth = 0;
         currentYear++;
     }
     else {
         currentMonth++;
         firstDay -= 31;
+        lastDay = firstDay + 6;
     }
 }
 
 function nextWeek() {
     firstDay+=7;
+    lastDay = firstDay + 6;
+    checkIfLastDayIsMoreThan30or31();
+
     if(monthsWith30Days.includes(months[currentMonth]) && firstDay > 30){
         currentMonth++;
         firstDay -= 30;
@@ -82,11 +87,61 @@ function nextWeek() {
     renderWeek();
 }
 
+function checkIfLastDayIsMoreThan30or31(){
+    lastDay = firstDay + 6;
+    if(monthsWith30Days.includes(months[currentMonth-1]) && lastDay > 30){
+        lastDayMonth = currentMonth+1;
+        lastDay -= 30;
+    }
+    else if(monthsWith31Days.includes(months[currentMonth-1]) && lastDay > 31){
+        lastDayMonth = currentMonth+1;
+        lastDay -= 31;
+    }
+    else if ((currentMonth-1) === 1){
+        if(isLeapYear(currentYear) && lastDay > 29) {
+            lastDayMonth = currentMonth+1;
+            lastDay -= 29;
+        }
+        else if (lastDay > 28) {
+            lastDayMonth = currentMonth+1;
+            lastDay -= 28;
+        }
+    }
+    else if(lastDay < 30){
+        lastDayMonth = currentMonth;
+    }
+}
+
 function prevWeek(){
     firstDay-=7;
-    if(firstDay < 1){
-        currentMonth--;
+    lastDay = firstDay + 6;
+    checkIfLastDayIsMoreThan30or31();
+    if (firstDay < 1) {
+        if (monthsWith30Days.includes(months[currentMonth - 1])) {
+            firstDay += 30;
+            currentMonth--;
+        }
+        else if(monthsWith31Days.includes(months[currentMonth-1])){
+            firstDay += 31;
+            currentMonth--;
+        }
+        else if ((currentMonth - 1) < 0){
+            currentMonth = 11;
+            currentYear--;
+            firstDay += 31;
+        }
+        else if ((currentMonth -1) === 1){
+            if(isLeapYear(currentYear)) {
+                currentMonth--;
+                firstDay +=29;
+            }
+            else {
+                currentMonth--;
+                firstDay +=28;
+            }
+        }
     }
+    renderWeek();
 }
 
 prevWeekBtn.addEventListener ("click", () => {

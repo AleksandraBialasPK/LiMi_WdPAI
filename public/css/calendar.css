@@ -129,7 +129,7 @@ header > nav {
 
 .change-date {
     color: #303030;
-    min-width: 200px;
+    min-width: 300px;
     width: 25%;
     display: flex;
     justify-content: space-evenly;
