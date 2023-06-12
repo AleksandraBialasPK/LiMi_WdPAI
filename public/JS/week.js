@@ -34,24 +34,28 @@ const date = new Date();
 let currentDate = date.getDate();
 let currentMonth = date.getMonth();
 let currentYear = date.getFullYear();
-const firstDay = new Date(date.setDate(currentDate - date.getDay())).toLocaleDateString('en-GB');
-const lastDay = new Date(date.setDate(currentDate - date.getDay() + 6)).toLocaleDateString('en-GB');
+
+let firstDay = currentDate - date.getDay(); // First day is the day of the month - the day of the week
+var lastDay = firstDay + 6; // last day is the first day + 6
+
 
 function renderWeek() {
-    week.innerHTML = `${firstDay} - ${lastDay}`;
+    week.innerHTML = `${firstDay}.${currentMonth}.${currentYear} - ${lastDay}.${currentMonth}.${currentYear}`;
+}
+
+renderWeek();
+
+function nextWeek(date, weeks) {
 }
 
 prevWeekBtn.addEventListener ("click", () => {
-    currentDate++
     renderWeek();
 });
 
 nextWeekBtn.addEventListener ("click", () => {
-    currentDate--;
+    nextWeek(currentDate, 1);
     renderWeek();
 });
-
-renderWeek();
 
 function generateTimeline() {
     let hours = "";
