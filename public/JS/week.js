@@ -48,6 +48,18 @@ function isLeapYear(year) {
     return (year % 100 === 0) ? (year % 400 === 0) : (year % 4 === 0);
 }
 
+function checkIfNewYearAndIncrement(month){
+    if((month+1) > 11){
+        firstDay -= 31;
+        currentMonth = 0;
+        currentYear++;
+    }
+    else {
+        currentMonth++;
+        firstDay -= 31;
+    }
+}
+
 function nextWeek() {
     firstDay+=7;
     if(monthsWith30Days.includes(months[currentMonth]) && firstDay > 30){
@@ -55,8 +67,7 @@ function nextWeek() {
         firstDay -= 30;
     }
     else if(monthsWith31Days.includes(months[currentMonth]) && firstDay > 31){
-        currentMonth++;
-        firstDay -= 31;
+        checkIfNewYearAndIncrement(currentMonth);
     }
     else if ((currentMonth) === 1){
         if(isLeapYear(currentYear) && firstDay > 29) {
