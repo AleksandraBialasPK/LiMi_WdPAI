@@ -65,7 +65,7 @@ function checkIfNewYearAndIncrement(month){
 function nextWeek() {
     firstDay+=7;
     lastDay = firstDay + 6;
-    checkIfLastDayIsMoreThan30or31();
+    checkIfLastDayForNextMonthIsMoreThan30or31();
 
     if(monthsWith30Days.includes(months[currentMonth]) && firstDay > 30){
         currentMonth++;
@@ -87,7 +87,33 @@ function nextWeek() {
     renderWeek();
 }
 
-function checkIfLastDayIsMoreThan30or31(){
+function checkIfLastDayForNextMonthIsMoreThan30or31(){
+    lastDay = firstDay + 6;
+
+    if(monthsWith30Days.includes(months[currentMonth]) && lastDay > 30){
+        lastDayMonth = currentMonth+1;
+        lastDay -= 30;
+    }
+    else if(monthsWith31Days.includes(months[currentMonth]) && lastDay > 31){
+        lastDayMonth = currentMonth+1;
+        lastDay -= 31;
+    }
+    else if ((currentMonth) === 1){
+        if(isLeapYear(currentYear) && lastDay > 29) {
+            lastDayMonth = currentMonth+1;
+            lastDay -= 29;
+        }
+        else if (lastDay > 28) {
+            lastDayMonth = currentMonth+1;
+            lastDay -= 28;
+        }
+    }
+    else if(lastDay < 30){
+        lastDayMonth = currentMonth;
+    }
+}
+
+function checkIfLastDayForPrevMonthIsMoreThan30or31(){
     lastDay = firstDay + 6;
     if(monthsWith30Days.includes(months[currentMonth-1]) && lastDay > 30){
         lastDayMonth = currentMonth+1;
@@ -115,7 +141,7 @@ function checkIfLastDayIsMoreThan30or31(){
 function prevWeek(){
     firstDay-=7;
     lastDay = firstDay + 6;
-    checkIfLastDayIsMoreThan30or31();
+    checkIfLastDayForPrevMonthIsMoreThan30or31();
     if (firstDay < 1) {
         if (monthsWith30Days.includes(months[currentMonth - 1])) {
             firstDay += 30;
