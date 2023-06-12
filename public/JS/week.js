@@ -32,7 +32,8 @@ monthsWith31Days = ["Jan", "Mar", "May", "Jul", "Aug", "Oct", "Dec"];
 const date = new Date();
 
 let currentDate = date.getDate();
-let currentMonth = date.getMonth();
+// let currentMonth = date.getMonth();
+let currentMonth = 3;
 let currentYear = date.getFullYear();
 let lastDayMonth = currentMonth;
 let firstDay = currentDate - date.getDay();
@@ -112,7 +113,7 @@ function checkIfLastDayForNextMonthIsMoreThan30or31(){
             lastDay -= 28;
         }
     }
-    else if(lastDay < 30){
+    else if(lastDay <= 31){
         lastDayMonth = currentMonth;
     }
 }
@@ -136,8 +137,11 @@ function checkIfLastDayForPrevMonthIsMoreThan30or31(){
             lastDayMonth = currentMonth+1;
             lastDay -= 28;
         }
+        else{
+            lastDayMonth = currentMonth;
+        }
     }
-    else if(lastDay < 30){
+    else if(lastDay <= 31){
         lastDayMonth = currentMonth;
     }
 }
