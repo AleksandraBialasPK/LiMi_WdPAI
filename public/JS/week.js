@@ -146,10 +146,29 @@ function checkIfLastDayForPrevMonthIsMoreThan30or31(){
     }
 }
 
+function checkIfLastDayIsLessThan1() {
+    if (lastDay < 1){
+        if (monthsWith30Days.includes(months[currentMonth-1])) {
+            lastDay = 30;
+        }
+        else if (monthsWith31Days.includes(months[currentMonth - 1])) {
+            lastDay = 31;
+        }
+        else if (currentMonth - 1 === 1){
+            if(isLeapYear(currentYear)) {
+                lastDay = 29;
+            }
+            else{
+                lastDay = 28;
+            }
+        }
+    }
+}
 function prevWeek(){
     firstDay-=7;
     lastDay = firstDay + 6;
     checkIfLastDayForPrevMonthIsMoreThan30or31();
+    checkIfLastDayIsLessThan1();
     if (firstDay < 1) {
         if (monthsWith30Days.includes(months[currentMonth - 1])) {
             firstDay += 30;
