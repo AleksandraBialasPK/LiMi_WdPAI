@@ -32,8 +32,7 @@ monthsWith31Days = ["Jan", "Mar", "May", "Jul", "Aug", "Oct", "Dec"];
 const date = new Date();
 
 let currentDate = date.getDate();
-// let currentMonth = date.getMonth();
-let currentMonth = 3;
+let currentMonth = date.getMonth();
 let currentYear = date.getFullYear();
 let lastDayMonth = currentMonth;
 let firstDay = currentDate - date.getDay();
