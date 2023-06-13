@@ -82,8 +82,13 @@ header > nav {
     border-radius: 5px 5px 0 0;
 }
 
-.push-right {
+.push-right-day {
     margin-right: 35%;
+    margin-left: auto;
+}
+
+.push-right-week {
+    margin-right: 30%;
     margin-left: auto;
 }
 
@@ -92,7 +97,7 @@ header > nav {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 300px;
+    width: 200px;
     height: 60px;
 }
 
@@ -129,13 +134,18 @@ header > nav {
 
 .change-date {
     color: #303030;
-    min-width: 300px;
-    width: 25%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 }
 
+#change-date-day {
+    width: 25%;
+}
+
+#change-date-week {
+    width: 35%;
+}
 .nav-arrows {
     color: #515151;
 }
@@ -146,6 +156,13 @@ header > nav {
 }
 
 .day-with-date {
+    width: 80%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.week-with-dates {
     width: 80%;
     display: flex;
     text-align: center;
