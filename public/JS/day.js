@@ -29,8 +29,8 @@ const months = [
     "December",
 ];
 
-monthsWith30Days = ["April", "June", "September", "November"];
-monthsWith31Days = ["January", "March", "May", "July", "August", "October", "December"];
+const monthsWith30Days = ["April", "June", "September", "November"];
+const monthsWith31Days = ["January", "March", "May", "July", "August", "October", "December"];
 
 const date = new Date();
 
@@ -102,8 +102,8 @@ prevDayBtn.addEventListener("click", () => {
             currentMonth--;
         }
         else if (monthsWith31Days.includes(months[currentMonth-1])){
-                currentDate = 31;
-                currentMonth--;
+            currentDate = 31;
+            currentMonth--;
         }
         else if ((currentMonth - 1) < 0){
             currentMonth = 11;
@@ -119,7 +119,7 @@ prevDayBtn.addEventListener("click", () => {
                 currentDate = 28;
                 currentMonth--;
             }
-            }
+        }
     }
 
     if (currentDay < 0) {
@@ -132,7 +132,7 @@ function generateTimeline() {
     let hours = "";
 
     for (let i = 1; i <= 23; i++) {
-            hours += `<div class="hour">${i}:00</div>`;
+        hours += `<div class="hour">${i}:00</div>`;
     }
     timelineContainer.innerHTML = hours;
 }
