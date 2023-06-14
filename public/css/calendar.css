@@ -87,6 +87,11 @@ select {
     margin-left: 10px;
 }
 
+#btn-add-new-event {
+    margin-top: 35px;
+    margin-bottom: 5px;
+}
+
 main {
     width: 80%;
     height: 100%;

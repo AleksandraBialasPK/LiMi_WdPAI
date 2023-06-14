@@ -7,31 +7,32 @@
     <title>Day by Limi</title>
 </head>
 <body>
-    <div class="sidebar-nav">
-        <form class="new-event-form" id="form">
-            <div class="user-add-event">
-                <div class="user-icon-add-event"></div>
-                <div>Aleksandra</div>
-            </div>
-            <div class="add-event-form-divs">
-                <label for="event">Title: </label>
-                <input name="event-name" type="text" id="event"/>
-            </div>
-            <div class="add-event-form-divs">
-                <label for="category">Category: </label>
-                <select name="categories" id="category">
-                    <option value="sports" class="sports">Sports</option>
-                    <option value="work-school" class="work-school">Work/School</option>
-                    <option value="home" class="home">Home</option>
-                    <option value="social" class="social">Social</option>
-                    <option value="other" class="other">Other</option>
-                </select>
-            </div>
-            <div class="add-event-form-divs">
-                <label for="event-date">Date and time: </label>
-                <input type="datetime-local" id="event-date" name="event-date"/>
-            </div>
-        </form>
+    <form class="new-event-form" id="form">
+        <div class="user-add-event">
+            <div class="user-icon-add-event"></div>
+            <div>Aleksandra</div>
+        </div>
+        <div class="add-event-form-divs">
+            <label for="event">Title: </label>
+            <input name="event-name" type="text" id="event"/>
+        </div>
+        <div class="add-event-form-divs">
+            <label for="category">Category: </label>
+            <select name="categories" id="category">
+                <option value="sports" class="sports">Sports</option>
+                <option value="work-school" class="work-school">Work/School</option>
+                <option value="home" class="home">Home</option>
+                <option value="social" class="social">Social</option>
+                <option value="other" class="other">Other</option>
+            </select>
+        </div>
+        <div class="add-event-form-divs">
+            <label for="event-date">Date and time: </label>
+            <input type="datetime-local" id="event-date" name="event-date"/>
+        </div>
+        <button id="btn-add-new-event" type="submit">Add event!</button>
+    </form>
+    <section class="sidebar-nav">
         <button class="create-new-event" id="create-new-event-button">Create new event</button>
         <div class="events">
             <label for="Sports"><input type="checkbox" class="checkbox-event sports" id="Sports" name="Sports" checked>Sports</label>
@@ -52,7 +53,7 @@
                                     checked>Dawid</label>
         </div>
         <button>Log out</button>
-    </div>
+    </section>
     <main>
         <header>
             <nav class="header-with-days-of-the-week">
