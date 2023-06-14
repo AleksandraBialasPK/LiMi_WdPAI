@@ -26,8 +26,8 @@ const months = [
     "Dec",
 ];
 
-monthsWith30Days = ["Apr", "Jun", "Sept", "Nov"];
-monthsWith31Days = ["Jan", "Mar", "May", "Jul", "Aug", "Oct", "Dec"];
+const monthsWith30Days = ["Apr", "Jun", "Sept", "Nov"];
+const monthsWith31Days = ["Jan", "Mar", "May", "Jul", "Aug", "Oct", "Dec"];
 
 const date = new Date();
 
