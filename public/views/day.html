@@ -14,7 +14,7 @@
         </div>
         <div class="add-event-form-divs">
             <label for="event">Title: </label>
-            <input name="event-name" type="text" id="event" required maxlength="10"/>
+            <input name="event-name" type="text" id="event" required maxlength="20"/>
         </div>
         <div class="add-event-form-divs">
             <label for="category">Category: </label>
@@ -27,8 +27,12 @@
             </select>
         </div>
         <div class="add-event-form-divs">
-            <label for="event-date">Date and time: </label>
-            <input type="datetime-local" id="event-date" name="event-date" required/>
+            <label for="start-event-date">Start date and time: </label>
+            <input type="datetime-local" id="start-event-date" name="start-event-date" required/>
+        </div>
+        <div class="add-event-form-divs">
+            <label for="end-event-date">End date and time: </label>
+            <input type="datetime-local" id="end-event-date" name="end-event-date" required/>
         </div>
         <button id="btn-add-new-event" type="submit">Add event!</button>
     </form>
