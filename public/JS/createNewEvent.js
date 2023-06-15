@@ -15,3 +15,15 @@ createNewEvent.addEventListener('click', () => {
         form.style.display = 'none';
     }
 });
+
+function addEvent(start, end) {
+    let events = ``;
+    let duration = end - start;
+    for (let m=1; m<=duration; m++){
+        events += `<div class="sports-event"></div>`;
+    }
+    let i="4";
+    const event = document.getElementById(`${i}`);
+    event.innerHTML = events;
+}
+addEvent(3, 5);

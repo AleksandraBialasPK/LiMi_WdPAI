@@ -139,16 +139,15 @@ function generateTimeline() {
 
 generateTimeline();
 
-function generateDays() {
+function generateDay() {
     let days = "";
 
     days += `<div class="day-grid-tile" id="first-day-tile"></div>`;
     for (let i = 0; i <= 21; i++) {
-        days += `<div class="day-grid-tile"></div>`;
+        days += `<div class="day-grid-tile" id="${i+1}"></div>`;
     }
     days += `<div class="day-grid-tile" id="last-day-tile"></div>`;
     daysContainer.innerHTML = days;
-
 }
 
-generateDays();
+generateDay();
