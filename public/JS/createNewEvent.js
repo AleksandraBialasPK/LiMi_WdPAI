@@ -22,7 +22,7 @@ function addEvent(start, end, title) {
     let length = 100 * duration;
     let eventTitle = title;
     let eventTime = `${start} - ${end}`;
-    let padding = 300;
+    let padding = start * 100;
 
     let eventLength = `<div class="sports-event">    
                  <div class="side-color">
@@ -41,4 +41,4 @@ function addEvent(start, end, title) {
     const elementToChange = document.querySelector(".sports-event");
     elementToChange.style.height = `${length}px`;
 }
-addEvent(2, 5, "Meeting with Aleks");
+addEvent(3.5, 5, "Meeting with Aleks");
