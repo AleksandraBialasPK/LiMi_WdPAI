@@ -144,4 +144,14 @@ function generateDay() {
     daysContainer.innerHTML = day;
 }
 
+function generateBreakLines() {
+    let breakLines = '';
+
+    for (let i = 0; i <= 22; i++) {
+        breakLines += `<div class="day-break-line"></div>`;
+    }
+    const dayBreakLines = document.querySelector(".day-break-line-container");
+    dayBreakLines.innerHTML = breakLines;
+}
 generateDay();
+generateBreakLines()

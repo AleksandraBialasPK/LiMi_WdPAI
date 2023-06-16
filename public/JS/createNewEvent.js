@@ -25,4 +25,4 @@ function addEvent(start, end) {
     const event = document.querySelector(".day-grid-tile");
     event.innerHTML = events;
 }
-// addEvent(3, 5);
+addEvent(3, 5);
