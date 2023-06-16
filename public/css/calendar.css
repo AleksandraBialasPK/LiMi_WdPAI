@@ -274,7 +274,7 @@ button:hover {
 .hour {
     color: #303030;
     box-sizing: border-box;
-    margin-top: 106px;
+    margin-top: 109px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -290,7 +290,7 @@ button:hover {
     background-color: #FFFFFF;
     border-radius: 0 5px 5px 0;
     display: grid;
-    grid-template: 96px repeat(23, 100px) / 1fr;
+    grid-template: repeat(24, 100px) / 1fr;
 }
 
 .day-break-line {
@@ -478,19 +478,15 @@ button:hover {
     background-color: #FFEA20;
 }
 
-/* event*/
-
 .sports-event {
     width: 150px;
-    height: 98px;
     background-color: rgba(255, 153, 183, 0.3);
     border-radius: 5px;
     display: flex;
 }
 
-.div-for-pic {
+.side-color {
     width: 30px;
-    height: 98px;
     background-color: #FF99B7;
     border-radius: 5px 0 0 5px;
     display: flex;
