@@ -1,7 +1,7 @@
 const day = document.querySelector(".day"),
     prevDayBtn = document.querySelector(".prev-day-btn"),
     nextDayBtn = document.querySelector(".next-day-btn"),
-    daysContainer = document.querySelector(".day-grid-tiles"),
+    daysContainer = document.querySelector(".day-grid-tile-container"),
     timelineContainer = document.querySelector(".timeline");
 
 const days = [
