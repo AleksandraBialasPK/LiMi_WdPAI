@@ -287,16 +287,9 @@ button:hover {
 }
 
 .day-grid-tile {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: #FFFFFF;
     border-radius: 0 5px 5px 0;
-}
-
-.day-break-line-container {
     display: grid;
-    grid-column: 2 / span 1;
     grid-template: 96px repeat(23, 100px) / 1fr;
 }
 
@@ -311,7 +304,11 @@ button:hover {
     background-color: #ffffff;
 }
 
-.day-break-line-container, .day-grid-tile-container {
+.event-container {
+    grid-column: 2 / span 1;
+}
+
+.event-container, .day-grid-tile-container {
     grid-column: 2 / span 1;
     grid-row: 1 / span 1;
 }

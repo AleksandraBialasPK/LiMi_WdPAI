@@ -152,7 +152,7 @@ function generateBreakLines() {
     for (let i = 0; i <= 22; i++) {
         breakLines += `<div class="day-break-line"></div>`;
     }
-    const dayBreakLines = document.querySelector(".day-break-line-container");
+    const dayBreakLines = document.querySelector(".day-grid-tile");
     dayBreakLines.innerHTML = breakLines;
 }
 generateDay();

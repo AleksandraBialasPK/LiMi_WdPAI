@@ -30,7 +30,7 @@ function addEvent(start, end) {
                         </div>
                    </div>`;
     }
-    const event = document.querySelector(".day-grid-tile");
+    const event = document.querySelector(".event-container");
     event.innerHTML = events;
 }
 addEvent(3, 5);
