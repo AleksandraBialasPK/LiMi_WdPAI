@@ -517,7 +517,7 @@ button:hover {
     padding: 2px 5px;
     font-size: small;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: flex-end;
 }
 
