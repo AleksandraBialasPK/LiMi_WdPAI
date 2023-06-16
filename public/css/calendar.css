@@ -266,7 +266,7 @@ button:hover {
     font-size: small;
     grid-column: 1 / span 1;
     display: grid;
-    border-radius: 5px 0 5px 5px;
+    border-radius: 5px 0 0 5px;
     background-color: #FFFFFF;
     grid-template: repeat(23, 100px) / 1fr;
 }
@@ -296,9 +296,8 @@ button:hover {
 
 .day-break-line-container {
     display: grid;
-    padding-top: 96px;
     grid-column: 2 / span 1;
-    grid-template: repeat(24, 100px) / 1fr;
+    grid-template: 96px repeat(23, 100px) / 1fr;
 }
 
 .day-break-line {
@@ -306,6 +305,10 @@ button:hover {
     height: 2px;
     background-color: #E2ECEA;
     border-radius: 5px;
+}
+
+#blank-day-break-line {
+    background-color: #ffffff;
 }
 
 .day-break-line-container, .day-grid-tile-container {

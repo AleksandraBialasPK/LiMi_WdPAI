@@ -147,6 +147,8 @@ function generateDay() {
 function generateBreakLines() {
     let breakLines = '';
 
+    breakLines += `<div class="day-break-line" id="blank-day-break-line"></div>`;
+
     for (let i = 0; i <= 22; i++) {
         breakLines += `<div class="day-break-line"></div>`;
     }
