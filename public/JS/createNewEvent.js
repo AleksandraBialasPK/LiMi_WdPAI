@@ -22,8 +22,7 @@ function addEvent(start, end) {
     for (let m=1; m<=duration; m++){
         events += `<div class="sports-event"></div>`;
     }
-    let i="4";
-    const event = document.getElementById(`${i}`);
+    const event = document.querySelector(".day-grid-tile");
     event.innerHTML = events;
 }
-addEvent(3, 5);
+// addEvent(3, 5);
