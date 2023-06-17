@@ -72,13 +72,14 @@ function adjustLength(start, end) {
     elementToChange.style.height = `${length}px`;
 }
 
+let events = ``;
+
 function addEvent(title, category, start, end) {
-    let events = ``;
     let eventTitle = title;
     let eventTime = `${start} - ${end}`;
     let padding = start * 100;
 
-    let eventLength = `<div class="event-tile">    
+    events += `<div class="event-tile">    
                  <div class="side-color">
                     <div class="picture-for-event"></div>
                  </div>
@@ -89,7 +90,7 @@ function addEvent(title, category, start, end) {
                </div>`;
 
     const event = document.querySelector(".event-container");
-    event.innerHTML = eventLength;
+    event.innerHTML = events;
     event.style.paddingTop = `${padding}px`;
 
     adjustLength(start, end);
@@ -97,3 +98,4 @@ function addEvent(title, category, start, end) {
 }
 
 addEvent("Meeting with Aleks", "social", 2.5, 5);
+addEvent("Meeting with Aleks", "home", 4.5, 6);
