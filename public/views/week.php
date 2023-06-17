@@ -12,12 +12,12 @@
         <div>Aleksandra</div>
     </div>
     <div class="add-event-form-divs">
-        <label for="event">Title: </label>
-        <input name="event-name" type="text" id="event" required maxlength="10"/>
+        <label for="event-title-form">Title: </label>
+        <input name="event-name" type="text" id="event-title-form" required maxlength="20"/>
     </div>
     <div class="add-event-form-divs">
-        <label for="category">Category: </label>
-        <select name="categories" id="category">
+        <label for="category-form">Category: </label>
+        <select name="categories" id="category-form">
             <option value="sports" class="sports">Sports</option>
             <option value="work-school" class="work-school">Work/School</option>
             <option value="home" class="home">Home</option>
@@ -26,8 +26,16 @@
         </select>
     </div>
     <div class="add-event-form-divs">
-        <label for="event-date">Date and time: </label>
-        <input type="datetime-local" id="event-date" name="event-date" required/>
+        <label for="event-date-form">Event date: </label>
+        <input type="date" id="event-date-form" name="event-date-form" required/>
+    </div>
+    <div class="add-event-form-divs">
+        <label for="start-time-form">Start time: </label>
+        <input type="time" id="start-time-form" name="start-time-form" required>
+    </div>
+    <div class="add-event-form-divs">
+        <label for="end-time-form">End time: </label>
+        <input type="time" id="end-time-form" name="end-time-form" required>
     </div>
     <button id="btn-add-new-event" type="submit">Add event!</button>
 </form>

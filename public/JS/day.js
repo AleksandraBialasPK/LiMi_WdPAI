@@ -1,7 +1,7 @@
 const day = document.querySelector(".day"),
     prevDayBtn = document.querySelector(".prev-day-btn"),
     nextDayBtn = document.querySelector(".next-day-btn"),
-    daysContainer = document.querySelector(".day-grid-tiles"),
+    daysContainer = document.querySelector(".day-grid-tile-container"),
     timelineContainer = document.querySelector(".timeline");
 
 const days = [
@@ -139,16 +139,21 @@ function generateTimeline() {
 
 generateTimeline();
 
-function generateDays() {
-    let days = "";
-
-    days += `<div class="day-grid-tile" id="first-day-tile"></div>`;
-    for (let i = 0; i <= 21; i++) {
-        days += `<div class="day-grid-tile"></div>`;
-    }
-    days += `<div class="day-grid-tile" id="last-day-tile"></div>`;
-    daysContainer.innerHTML = days;
-
+function generateDay() {
+    const day = `<div class="day-grid-tile"></div>`;
+    daysContainer.innerHTML = day;
 }
 
-generateDays();
+function generateBreakLines() {
+    let breakLines = '';
+
+    breakLines += `<div class="day-break-line" id="blank-day-break-line"></div>`;
+
+    for (let i = 0; i <= 22; i++) {
+        breakLines += `<div class="day-break-line"></div>`;
+    }
+    const dayBreakLines = document.querySelector(".day-grid-tile");
+    dayBreakLines.innerHTML = breakLines;
+}
+generateDay();
+generateBreakLines()

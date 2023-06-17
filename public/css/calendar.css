@@ -266,7 +266,7 @@ button:hover {
     font-size: small;
     grid-column: 1 / span 1;
     display: grid;
-    border-radius: 5px 0 5px 5px;
+    border-radius: 5px 0 0 5px;
     background-color: #FFFFFF;
     grid-template: repeat(23, 100px) / 1fr;
 }
@@ -274,35 +274,43 @@ button:hover {
 .hour {
     color: #303030;
     box-sizing: border-box;
-    margin-top: 106px;
+    margin-top: 109px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
 }
 
-.day-grid-tiles {
-    box-sizing: border-box;
+.day-grid-tile-container {
     display: grid;
     grid-column: 2 / span 1;
-    grid-template: repeat(24, 100px) / 1fr;
 }
 
 .day-grid-tile {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: #FFFFFF;
-    border-bottom: 2px solid #E2ECEA;
+    border-radius: 0 5px 5px 0;
+    display: grid;
+    grid-template: repeat(24, 100px) / 1fr;
 }
 
-#first-day-tile {
-    border-radius: 0 5px 0 0;
+.day-break-line {
+    width: 100%;
+    height: 2px;
+    background-color: #E2ECEA;
+    border-radius: 5px;
 }
 
-#last-day-tile {
-    border-bottom: none;
-    border-radius: 0 0 5px 0;
+#blank-day-break-line {
+    background-color: #ffffff;
+}
+
+.event-container {
+    grid-column: 2 / span 1;
+}
+
+.event-container, .day-grid-tile-container {
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 1;
 }
 
 .calendar-container {
@@ -469,3 +477,48 @@ button:hover {
     border: 2px solid #FFEA20;
     background-color: #FFEA20;
 }
+
+.event-tile {
+    width: 150px;
+    background-color: rgba(255, 153, 183, 0.3);
+    border-radius: 5px;
+    display: flex;
+}
+
+.side-color {
+    width: 30px;
+    background-color: #FF99B7;
+    border-radius: 5px 0 0 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.picture-for-event {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #046380;
+}
+
+.event-desc {
+    display: grid;
+    grid-template: 4fr 1fr / 1fr;
+}
+
+.event-name {
+    grid-row: 1 / span 1;
+    padding: 5px;
+}
+
+.event-time{
+    grid-row: 2 / span 1;
+    padding: 2px 5px;
+    font-size: small;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+
