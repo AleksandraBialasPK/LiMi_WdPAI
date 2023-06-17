@@ -2,6 +2,8 @@ const createNewEvent = document.querySelector(".create-new-event"),
      form = document.getElementById('form'),
     outsideOfForm = document.querySelector("main");
 
+let events = ``;
+
 form.style.display = 'none';
 
 createNewEvent.addEventListener('click', () => {
@@ -15,28 +17,6 @@ createNewEvent.addEventListener('click', () => {
         form.style.display = 'none';
     }
 });
-
-function chooseCategory(event) {
-    const expr = event;
-    const elementToChange = document.querySelector(".event-tile");
-    switch (expr) {
-        case 'sports':
-            elementToChange.style.backgroundColor = "#FF99B7";
-            break;
-        case 'work/school':
-            elementToChange.style.backgroundColor = "#AEC3FF";
-            break;
-        case 'home':
-            elementToChange.style.backgroundColor = "#C6B9DF";
-            break;
-        case 'social':
-            elementToChange.style.backgroundColor = "#82CD47";
-            break;
-        case 'other':
-            elementToChange.style.backgroundColor = "#FFEA20";
-            break;
-    }
-}
 
 function chooseCategory(category) {
     const categoryContainer = document.querySelector(".event-tile");
@@ -72,10 +52,10 @@ function adjustLength(start, end) {
     elementToChange.style.height = `${length}px`;
 }
 
-let events = ``;
-
-function addEvent(title, category, start, end) {
+function addEvent(title, category) {
     let eventTitle = title;
+    let start = 2;
+    let end = 5;
     let eventTime = `${start} - ${end}`;
     let padding = start * 100;
 
@@ -97,5 +77,8 @@ function addEvent(title, category, start, end) {
     chooseCategory(category);
 }
 
-addEvent("Meeting with Aleks", "social", 2.5, 5);
-addEvent("Meeting with Aleks", "home", 4.5, 6);
+addEventListener("submit", (event) => {
+    let title = document.getElementById("event-title-form").value;
+    let category = document.getElementById("category-form").value;
+    addEvent(title, category);
+});
