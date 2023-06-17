@@ -2,7 +2,7 @@
 
 class User
 {
-    private $userID;
+//    private $userID;
     private $roleID;
     private $email;
     private $password;
@@ -10,8 +10,8 @@ class User
     private $name;
     private $avatar;
 
-    public function __construct(int $userID, int $roleID, string $email, string $password, string $salt, string $name, string $avatar) {
-        $this->userID = $userID;
+    public function __construct(int $roleID, string $email, string $password, string $salt, string $name, string $avatar) {
+//        $this->userID = $userID;
         $this->roleID = $roleID;
         $this->email = $email;
         $this->password = $password;
@@ -20,13 +20,13 @@ class User
         $this->avatar = $avatar;
     }
 
-    public function getUserID(): int {
-        return $this->userID;
-    }
-
-    public function setUserID(int $userID) {
-        $this->userID = $userID;
-    }
+//    public function getUserID(): int {
+//        return $this->userID;
+//    }
+//
+//    public function setUserID(int $userID) {
+//        $this->userID = $userID;
+//    }
 
     public function getRoleID(): int {
         return $this->roleID;
