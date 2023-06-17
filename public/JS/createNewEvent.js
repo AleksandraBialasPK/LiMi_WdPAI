@@ -52,6 +52,10 @@ function adjustLength(start, end) {
     elementToChange.style.height = `${length}px`;
 }
 
+function timeToFloat(time) {
+
+}
+
 function addEvent(title, category) {
     let eventTitle = title;
     let start = 2;
