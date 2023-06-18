@@ -2,12 +2,13 @@
 
 require_once 'AppController.php';
 require_once __DIR__.'/../models/User.php';
+require_once __DIR__.'/../event/UserEvent.php';
 
 class SecurityController extends AppController
 {
     public function login()
     {
-        $user = new User("dipper@gmail.com", "mysteryShack", "Dipper", "Pines");
+        $userEvent = new UserEvent();
 
         if($this->isPost()) {
          return $this->login('login');
@@ -15,6 +16,13 @@ class SecurityController extends AppController
 
         $email = $_POST["email"];
         $password = $_POST["password"];
+
+        $user = $userEvent->getUser();
+
+
+        if (!$user) {
+            $this->render("login", ["messages" => ["User does not exist!"]]);
+        }
 
         if ($user->getEmail() !== $email)
         {
