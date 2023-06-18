@@ -4,12 +4,20 @@ require_once 'AppController.php';
 require_once __DIR__.'/../models/User.php';
 require_once __DIR__.'/../event/UserEvent.php';
 
-class SecurityController extends AppController
-{
-    public function login()
-    {
-        $userEvent = new UserEvent();
+class SecurityController extends AppController {
+    const MAX_FILE_SIZE = 5*1024*1024;
+    const SUPPORTED_TYPES = ["image/png", "image/jpg"];
+    const UPLOAD_DIRECTORY = "/../public/uploads/avatars/";
 
+    private $userEvent;
+
+    public function __construct(){
+        parent::__construct();
+        $this->userEvent = new UserEvent();
+    }
+
+    public function login() {
+        session_start();
         if($this->isPost()) {
          return $this->login('login');
         }
@@ -17,7 +25,8 @@ class SecurityController extends AppController
         $email = $_POST["email"];
         $password = $_POST["password"];
 
-        $user = $userEvent->getUser();
+        $userEvent = new UserEvent();
+        $user = $userEvent->getUser($email);
 
 
         if (!$user) {
@@ -33,8 +42,19 @@ class SecurityController extends AppController
         {
             return $this->render('login', ['messages' => ["Wrong password!"]]);
         }
-//        return $this->render('day');
+
+        $userID = $user->getUserID();
+        $_SESSION["user"] = htmlspecialchars($userID);
+
         $url = "http://$_SERVER[HTTP_HOST]";
         header("Location: {$url}/day");
+    }
+
+    public function logout() {
+        session_start();
+        unset($_SESSION["user"]);
+        session_destroy();
+        $url = "http://$_SERVER[HTTP_HOST]";
+        header("Location: {$url}/login");
     }
 }
