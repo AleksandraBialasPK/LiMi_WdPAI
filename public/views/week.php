@@ -59,7 +59,7 @@
         <label for="Person4"><input type="checkbox" class="checkbox-person" id="Person4" name="Person"
                                     checked>Dawid</label>
     </div>
-    <button>Log out</button>
+    <a href="/logout"><button>Log out</button></a>
 </section>
 <main>
     <header>

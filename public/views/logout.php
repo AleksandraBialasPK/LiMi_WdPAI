@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <head>
+    <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="public/css/login_logout.css">
     <title>See you soon!</title>
 </head>

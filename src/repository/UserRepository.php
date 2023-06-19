@@ -1,9 +1,9 @@
 <?php
 
-require_once 'Event.php';
+require_once 'Repository.php';
 require_once __DIR__."/../models/User.php";
 
-class UserEvent extends Event {
+class UserRepository extends Repository {
     public function getUser(string $email){
         $raw_statement = "SELECT * FROM \"Users\" join \"UserDetails\" on \"Users\".\"userDetailsID\" = \"UserDetails\".\"userDetailsID\" WHERE email=:email";
         $statement = $this->database->connect()->prepare($raw_statement);

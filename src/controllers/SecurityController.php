@@ -2,7 +2,7 @@
 
 require_once 'AppController.php';
 require_once __DIR__.'/../models/User.php';
-require_once __DIR__.'/../event/UserEvent.php';
+require_once __DIR__ . '/../repository/UserRepository.php';
 
 class SecurityController extends AppController {
     const MAX_FILE_SIZE = 5*1024*1024;
@@ -13,7 +13,7 @@ class SecurityController extends AppController {
 
     public function __construct(){
         parent::__construct();
-        $this->userEvent = new UserEvent();
+        $this->userEvent = new UserRepository();
     }
 
     public function login() {
@@ -25,7 +25,7 @@ class SecurityController extends AppController {
         $email = $_POST["email"];
         $password = $_POST["password"];
 
-        $userEvent = new UserEvent();
+        $userEvent = new UserRepository();
         $user = $userEvent->getUser($email);
 
 
