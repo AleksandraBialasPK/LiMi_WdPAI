@@ -65,8 +65,8 @@
         <header>
             <nav class="header-with-days-of-the-week">
                 <div class="views-nav">
-                    <a href="./day.php" class="day-week-nav active-view">Day</a>
-                    <a href="./week.php" class="day-week-nav">Week</a>
+                    <a href="/day" class="day-week-nav active-view">Day</a>
+                    <a href="/week" class="day-week-nav">Week</a>
                 </div>
                 <div class="change-date push-right-day" id="change-date-day">
                     <div class="nav-arrows prev-day-btn"><i class="fa-solid fa-chevron-left"></i></div>
