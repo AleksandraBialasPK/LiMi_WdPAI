@@ -51,13 +51,16 @@
                                     checked>Other</label>
         </div>
         <div class="events">
-            <label for="Person1"><input type="checkbox" class="checkbox-person" id="Person1" name="Person" checked>Aleksandra</label>
-            <label for="Person2"><input type="checkbox" class="checkbox-person" id="Person2" name="Person"
-                                    checked>Aleks</label>
-            <label for="Person3"><input type="checkbox" class="checkbox-person" id="Person3" name="Person"
-                                    checked>Hanna</label>
-            <label for="Person4"><input type="checkbox" class="checkbox-person" id="Person4" name="Person"
-                                    checked>Dawid</label>
+            <?php foreach ($users as $user): ?>
+                <div class="person" id="person_1">
+                    <div class="avatar">
+                        <img src="public/avatars/<?= $user->getAvatar(); ?>">
+                    </div>
+                    <div class="nickname">
+                        <span class="name"><?= $user->getName();?></span>
+                    </div>
+                </div>
+            <?php endforeach; ?>
         </div>
         <a href="/logout"><button>Log out</button></a>
     </section>

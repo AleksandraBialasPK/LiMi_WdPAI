@@ -393,18 +393,43 @@ button:hover {
     grid-column: 7 / span 1;
 }
 
-.checkbox-person {
-    width: 30px;
-    height: 30px;
+.avatar {
+    width: 80px;
+    height: 80px;
     background-color: white;
     border-radius: 50%;
     vertical-align: middle;
-    border: 2px solid #ddd;
+    border: 2px solid #82CD47;
     margin: 0.5em 1em;
     appearance: none;
     -webkit-appearance: none;
     outline: none;
-    cursor: pointer;
+}
+
+img {
+    width: 80px;
+    height: 80px;
+    /* fill the container, preserving aspect ratio, and cropping to fit */
+    background-size: cover;
+
+    /* center the image vertically and horizontally */
+    background-position: top center;
+
+    /* round the edges to a circle with border radius 1/2 container size */
+    border-radius: 50%;
+}
+
+.person {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .events {

@@ -28,7 +28,7 @@ class UserRepository extends Repository {
 
     public function getUsers(): array{
         $result = [];
-        $raw_statement = "SELECT * FROM \"Users\" join \"UsersDetails\" on \"Users\".\"userDetailsID\" = \"UsersDetails\".\"userDetailsID\" ORDER BY \"userID\" DESC";
+        $raw_statement = "SELECT * FROM \"Users\" join \"UserDetails\" on \"Users\".\"userDetailsID\" = \"UserDetails\".\"userDetailsID\" ORDER BY \"userID\" DESC";
         $statement = $this->database->connect()->prepare($raw_statement);
         $statement->execute();
         $users = $statement->fetchAll(PDO::FETCH_ASSOC);
