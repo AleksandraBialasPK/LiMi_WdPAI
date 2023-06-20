@@ -11,6 +11,6 @@ Routing::get('week', 'DefaultController');
 
 Routing::post('login', 'SecurityController');
 Routing::post('logout', 'SecurityController');
-//Routing::post('register', 'SecurityController');
+Routing::post('register', 'SecurityController');
 
 Routing::run($path);

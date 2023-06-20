@@ -6,7 +6,6 @@ class User
     private $roleID;
     private $email;
     private $password;
-
     private $name;
     private $avatar;
 

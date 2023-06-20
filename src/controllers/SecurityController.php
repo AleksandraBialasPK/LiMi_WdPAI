@@ -9,11 +9,11 @@ class SecurityController extends AppController {
     const SUPPORTED_TYPES = ["image/png", "image/jpg"];
     const UPLOAD_DIRECTORY = "/../public/uploads/avatars/";
 
-    private $userEvent;
+    private $userRepository;
 
     public function __construct(){
         parent::__construct();
-        $this->userEvent = new UserRepository();
+        $this->userRepository = new UserRepository();
     }
 
     public function login() {
@@ -25,9 +25,8 @@ class SecurityController extends AppController {
         $email = $_POST["email"];
         $password = $_POST["password"];
 
-        $userEvent = new UserRepository();
-        $user = $userEvent->getUser($email);
-
+        $userRepository = new UserRepository();
+        $user = $userRepository->getUser($email);
 
         if (!$user) {
             $this->render("login", ["messages" => ["User does not exist!"]]);
@@ -56,5 +55,54 @@ class SecurityController extends AppController {
         session_destroy();
         $url = "http://$_SERVER[HTTP_HOST]";
         header("Location: {$url}/login");
+    }
+
+    public function register()
+    {
+        if (!$this->isPost()) {
+            $this->render('register');
+        }
+        if ($_POST["email"] === "") {
+            return $this->render('register');
+        }
+        if ($this->isPost()) {
+            $email = $_POST['email'];
+            $password = $_POST['password'];
+            $roleID = 1;
+            $confirmedPassword = $_POST['confirmedPassword'];
+            $name = $_POST['name'];
+
+            if (is_uploaded_file($_FILES["file"]["tmp_name"]) && $this->validate_file($_FILES["file"])) {
+                move_uploaded_file(
+                    $_FILES["file"]["tmp_name"],
+                    dirname(__DIR__) . self::UPLOAD_DIRECTORY . $_FILES["file"]["name"]
+                );
+                $avatar = $_FILES["file"]["name"];
+            } else {
+                $avatar = "default.png";
+            }
+
+            if ($password !== $confirmedPassword) {
+                $this->render('register', ['messages' => ['Please provide the proper password']]);
+            }
+            $password = password_hash($password, PASSWORD_DEFAULT);
+            $user = new User($email, $password, $password, $roleID, $name, $avatar);
+
+            $this->userRepository->addUser($user);
+
+            $this->render('login', ['messages' => ['You\'ve been successfully registered!']]);
+        }
+    }
+
+    private function validate_file(array $file): bool {
+        if($file["size"] > self::MAX_FILE_SIZE){
+            $this->messages[] = "Provided file is too large :(";
+            return false;
+        }
+        if(!isset($file["type"]) && !in_array($file["type"], self::SUPPORTED_TYPES)) {
+            $this->messages[] = "Provided file type (".$file["type"].") is not supported :(";
+            return false;
+        }
+        return true;
     }
 }
