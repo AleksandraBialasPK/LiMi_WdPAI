@@ -46,13 +46,13 @@ class UserRepository extends Repository {
     }
 
     public function addUser(User $user){
-        $raw_statement = "INSERT INTO \"UsersDetails\" (name, avatar) VALUES (?, ?) RETURNING \"userDetailsID\"";
+        $raw_statement = "INSERT INTO \"UserDetails\" (name, avatar) VALUES (?, ?) RETURNING \"userDetailsID\"";
         $statement = $this->database->connect()->prepare($raw_statement);
         $statement->execute([
             $user->getName(),
             $user->getAvatar()
         ]);
-        $userDetailsID = $statement->fetch(PDO::FETCH_ASSOC)["id"];
+        $userDetailsID = $statement->fetch(PDO::FETCH_ASSOC)["userDetailsID"];
 
         $raw_statement = "INSERT into \"Users\" (email, password, \"roleID\", \"userDetailsID\") values (?, ?, ?, ?)";
         $statement = $this->database->connect()->prepare($raw_statement);

@@ -29,7 +29,7 @@
             </div>
             <div class="login-button-container">
                 <button type="submit">Sign In</button>
-                <a href="/register"><button id="sign-up-button">Sign Up</button></a>
+                <button id="sign-up-button" type="submit" formaction="/register">Sign up</button>
             </div>
         </form>
     </div>

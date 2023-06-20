@@ -11,12 +11,12 @@ class AppController {
 
     protected function isPost(): bool
     {
-        return $this->request === $_POST;
+        return $this->request === 'POST';
     }
 
     protected function isGet(): bool
     {
-        return $this->request === $_GET;
+        return $this->request === 'GET';
     }
 
     protected function render(string $template = null, array $variables = []) {

@@ -38,7 +38,7 @@ class Event{
         $this->category = $category;
     }
 
-    public function getDate():
+    public function getDate()
     {
         return $this->date;
     }

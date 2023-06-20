@@ -7,12 +7,12 @@
 <body>
 <div class="login-left-side">
     <img class="logo" src="public/img/logo-no-background.svg" alt="LiMi logo">
-    <form class="register-form" action="register" method="POST" ENCTYPE="multipart/form-data">
-        <input class="credentials-input" name="email" type="text" placeholder="email@email.com">
-        <input class="credentials-input" name="password" type="password" placeholder="password">
-        <input class="credentials-input" name="confirmedPassword" type="password" placeholder="confirm password">
-        <input class="credentials-input" name="name" type="text" placeholder="name">
-        <label class="file-loader">
+    <form class="login-form-container" action="register" method="POST" ENCTYPE="multipart/form-data">
+        <input class="login-input" name="email" type="text" placeholder="email@email.com">
+        <input class="login-input" name="password" type="password" placeholder="password">
+        <input class="login-input" name="confirmedPassword" type="password" placeholder="confirm password">
+        <input class="login-input" name="name" type="text" placeholder="name">
+        <label class="login-input">
             <i class="fa fa-file-arrow-up active"></i>
             <input type="file" name="file">
         </label>
@@ -27,7 +27,7 @@
         </div>
         <div class="login-button-container">
             <button type="submit">Sign Up</button>
-            <button id="sign-up-button">Sign In</button>
+            <button id="sign-up-button" type="submit" formaction="/login">Sign In</button>
         </div>
     </form>
 </div>

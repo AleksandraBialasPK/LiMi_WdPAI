@@ -2,12 +2,12 @@
 
 require_once 'AppController.php';
 require_once __DIR__.'/../models/User.php';
-require_once __DIR__ . '/../repository/UserRepository.php';
+require_once __DIR__.'/../repository/UserRepository.php';
 
 class SecurityController extends AppController {
     const MAX_FILE_SIZE = 5*1024*1024;
     const SUPPORTED_TYPES = ["image/png", "image/jpg"];
-    const UPLOAD_DIRECTORY = "/../public/uploads/avatars/";
+    const UPLOAD_DIRECTORY = "/../public/avatars/";
 
     private $userRepository;
 
@@ -18,8 +18,8 @@ class SecurityController extends AppController {
 
     public function login() {
         session_start();
-        if($this->isPost()) {
-         return $this->login('login');
+        if(!$this->isPost()) {
+         return $this->render('login');
         }
 
         $email = $_POST["email"];
@@ -71,7 +71,6 @@ class SecurityController extends AppController {
             $roleID = 1;
             $confirmedPassword = $_POST['confirmedPassword'];
             $name = $_POST['name'];
-
             if (is_uploaded_file($_FILES["file"]["tmp_name"]) && $this->validate_file($_FILES["file"])) {
                 move_uploaded_file(
                     $_FILES["file"]["tmp_name"],
@@ -79,14 +78,15 @@ class SecurityController extends AppController {
                 );
                 $avatar = $_FILES["file"]["name"];
             } else {
-                $avatar = "default.png";
+                return $this->render('register', ['messages' => ["Provide an avatar!"]]);
             }
 
             if ($password !== $confirmedPassword) {
                 $this->render('register', ['messages' => ['Please provide the proper password']]);
             }
+
             $password = password_hash($password, PASSWORD_DEFAULT);
-            $user = new User($email, $password, $password, $roleID, $name, $avatar);
+            $user = new User(-1, $roleID, $email, $password, $name, $avatar);
 
             $this->userRepository->addUser($user);
 
