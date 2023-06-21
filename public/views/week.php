@@ -37,7 +37,7 @@
         <label for="end-time-form">End time: </label>
         <input type="time" id="end-time-form" name="endTime" required>
     </div>
-    <button id="btn-add-new-event" type="submit">Add event!</button>
+    <div class="add-event-form-divs"><button id="btn-add-new-event" type="submit">Add event!</button></div>
 </form>
 <section class="sidebar-nav">
     <button class="create-new-event" id="create-new-event-button">Create new event</button>
