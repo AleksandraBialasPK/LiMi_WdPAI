@@ -24,8 +24,17 @@ class CalendarController extends AppController {
             header("Location: {$url}/logout");
             return null;
         }
+
         $users = $this->userRepository->getUsers();
-        $this->render("day", ["users" => $users]);
+
+        foreach ($users as $user) {
+            if($user->getUserID() === $_SESSION['user']){
+                $loggedInUsername = $user->getName();
+            }
+            else {$loggedInUsername = $_SESSION['user'];}
+        }
+
+        $this->render("day", ["users" => $users, 'loggedInUsername'=>$loggedInUsername]);
     }
 
     public function week() {
@@ -62,7 +71,6 @@ class CalendarController extends AppController {
 
             $this->eventRepository->addEvent($event);
 
-//            $this->render('day');
             $url = "http://$_SERVER[HTTP_HOST]";
             header("Location: {$url}/day");
         }

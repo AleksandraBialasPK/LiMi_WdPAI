@@ -9,7 +9,7 @@
     <form class="new-event-form" id="form" method="POST" action="/addEvent">
         <div class="user-add-event">
             <div class="user-icon-add-event"></div>
-            <div>Aleksandra</div>
+            <div><?php echo $loggedInUsername; ?></div>
         </div>
         <div class="add-event-form-divs">
             <label for="event-title-form">Title: </label>

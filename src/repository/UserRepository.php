@@ -17,8 +17,8 @@ class UserRepository extends Repository {
         }
 
         return new User(
-            $user_data["roleID"],
             $user_data["userID"],
+            $user_data["roleID"],
             $user_data["email"],
             $user_data["password"],
             $user_data["name"],
