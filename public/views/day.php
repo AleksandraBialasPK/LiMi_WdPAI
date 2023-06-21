@@ -78,7 +78,7 @@
                 </div>
             </nav>
         </header>
-        <section class="calendar-with-timeline-container">
+        <section class="calendar-with-timeline-container day">
             <div class="timeline">
             </div>
             <div class="day-grid-tile-container">

@@ -239,12 +239,19 @@ button:hover {
 .calendar-with-timeline-container {
     box-sizing: border-box;
     padding: 0 10px 10px 10px;
-    height: 80%;
     display: grid;
     grid-template: 1fr / 1fr 17fr;
     overflow: auto;
     scrollbar-width: thin;
     scrollbar-color: #E2ECEA  #FFFFFF;
+}
+
+.day {
+    height: 86%;
+}
+
+.week {
+    height: 81%;
 }
 
 .calendar-with-timeline-container::-webkit-scrollbar {

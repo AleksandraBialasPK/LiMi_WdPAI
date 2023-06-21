@@ -87,7 +87,7 @@
             <div class="day-of-the-week">Saturday</div>
         </div>
     </header>
-    <section class="calendar-with-timeline-container">
+    <section class="calendar-with-timeline-container week">
         <div class="timeline">
         </div>
         <div class="calendar-container">
