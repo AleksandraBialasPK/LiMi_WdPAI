@@ -28,7 +28,7 @@ body {
     justify-content: center;
     align-items: center;
     padding: 20px 24px 20px;
-    gap: 40px;
+    gap: 20px;
     float: right;
     width: 20%;
     height: 100%;
@@ -394,28 +394,23 @@ button:hover {
 }
 
 .avatar {
-    width: 80px;
-    height: 80px;
+    width: 50px;
+    height: 50px;
     background-color: white;
     border-radius: 50%;
     vertical-align: middle;
     border: 2px solid #82CD47;
-    margin: 0.5em 1em;
+    margin: 5px 1em;
     appearance: none;
     -webkit-appearance: none;
     outline: none;
 }
 
 img {
-    width: 80px;
-    height: 80px;
-    /* fill the container, preserving aspect ratio, and cropping to fit */
+    width: 50px;
+    height: 50px;
     background-size: cover;
-
-    /* center the image vertically and horizontally */
     background-position: top center;
-
-    /* round the edges to a circle with border radius 1/2 container size */
     border-radius: 50%;
 }
 
