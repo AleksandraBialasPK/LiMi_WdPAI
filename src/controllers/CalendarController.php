@@ -2,15 +2,19 @@
 
 require_once 'AppController.php';
 require_once __DIR__.'/../models/User.php';
+require_once __DIR__.'/../models/Event.php';
 require_once __DIR__.'/../repository/UserRepository.php';
+require_once __DIR__.'/../repository/EventRepository.php';
 
 class CalendarController extends AppController {
 
     private $userRepository;
+    private $eventRepository;
 
     public function __construct(){
         parent::__construct();
         $this->userRepository = new UserRepository();
+        $this->eventRepository = new EventRepository();
     }
 
     public function day() {
@@ -33,5 +37,34 @@ class CalendarController extends AppController {
         }
         $users = $this->userRepository->getUsers();
         $this->render("week", ["users" => $users]);
+    }
+
+    public function getEvents() {
+        session_start();
+        if (empty($_SESSION["user"])) {
+            $url = "http://$_SERVER[HTTP_HOST]";
+            header("Location: {$url}/logout");
+            return null;
+        }
+        $events = $this->eventRepository->getEvent();
+        $this->render('day', ["day"=>$events]);
+    }
+
+    public function addEvent() {
+        if ($this->isPost()) {
+            $title = $_POST['title'];
+            $category = $_POST['category'];
+            $date = $_POST['date'];
+            $startTime = $_POST['startTime'];
+            $endTime = $_POST['endTime'];
+
+            $event = new Event($title, $category, $date, $startTime, $endTime);
+
+            $this->eventRepository->addEvent($event);
+
+//            $this->render('day');
+            $url = "http://$_SERVER[HTTP_HOST]";
+            header("Location: {$url}/day");
+        }
     }
 }

@@ -26,9 +26,14 @@ class EventRepository extends Repository{
     }
 
     public function addEvent(Event $event): void {
-        $statement = $this->database->connect()->prepare('
-            INSERT INTO \"Events\" (title, category, date, "startTime", "endTime") VALUES (?, ?, ?, ?, ?)
-        ');
+//        echo($event->getTitle());
+//        echo($event->getCategory());
+//        echo($event->getDate());
+//        echo(var_dump($event->getStartTime()));
+//        echo(var_dump($event->getEndTime()));
+        $statement = $this->database->connect()->prepare(
+            "INSERT INTO \"Events\" (title, category, date, \"startTime\", \"endTime\") VALUES (?, ?, ?, ?, ?)"
+        );
 
         $statement->execute([
             $event->getTitle(),

@@ -10,8 +10,10 @@ Routing::get('index', 'DefaultController');
 Routing::get('day', 'CalendarController');
 Routing::get('week', 'CalendarController');
 
+
 Routing::post('login', 'SecurityController');
 Routing::post('logout', 'SecurityController');
 Routing::post('register', 'SecurityController');
+Routing::post('addEvent', 'CalendarController');
 
 Routing::run($path);

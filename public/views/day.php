@@ -6,18 +6,18 @@
     <title>Day by Limi</title>
 </head>
 <body>
-    <form class="new-event-form" id="form">
+    <form class="new-event-form" id="form" method="POST" action="/addEvent">
         <div class="user-add-event">
             <div class="user-icon-add-event"></div>
             <div>Aleksandra</div>
         </div>
         <div class="add-event-form-divs">
             <label for="event-title-form">Title: </label>
-            <input name="event-name" type="text" id="event-title-form" required maxlength="20"/>
+            <input name="title" type="text" id="event-title-form" required maxlength="20"/>
         </div>
         <div class="add-event-form-divs">
             <label for="category-form">Category: </label>
-            <select name="categories" id="category-form">
+            <select name="category" id="category-form">
                 <option value="sports" class="sports">Sports</option>
                 <option value="work-school" class="work-school">Work/School</option>
                 <option value="home" class="home">Home</option>
@@ -27,15 +27,15 @@
         </div>
         <div class="add-event-form-divs">
             <label for="event-date-form">Event date: </label>
-            <input type="date" id="event-date-form" name="event-date-form" required/>
+            <input type="date" id="event-date-form" name="date" required/>
         </div>
         <div class="add-event-form-divs">
             <label for="start-time-form">Start time: </label>
-            <input type="time" id="start-time-form" name="start-time-form" required>
+            <input type="time" id="start-time-form" name="startTime" required>
         </div>
         <div class="add-event-form-divs">
             <label for="end-time-form">End time: </label>
-            <input type="time" id="end-time-form" name="end-time-form" required>
+            <input type="time" id="end-time-form" name="endTime" required>
         </div>
         <button id="btn-add-new-event" type="submit">Add event!</button>
     </form>
