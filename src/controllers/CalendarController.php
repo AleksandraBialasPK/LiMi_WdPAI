@@ -30,10 +30,11 @@ class CalendarController extends AppController {
         foreach ($users as $user) {
             if(strval($user->getUserID()) === $_SESSION["user"]){
                 $loggedInUsername = $user->getName();
+                $loggedInAvatar = $user->getAvatar();
             }
         }
 
-        $this->render("day", ["users" => $users, 'loggedInUsername'=>$loggedInUsername]);
+        $this->render("day", ["users" => $users, 'loggedInUsername'=>$loggedInUsername, 'loggedInAvatar'=>$loggedInAvatar]);
     }
 
     public function week() {
@@ -44,7 +45,15 @@ class CalendarController extends AppController {
             return null;
         }
         $users = $this->userRepository->getUsers();
-        $this->render("week", ["users" => $users]);
+
+        foreach ($users as $user) {
+            if(strval($user->getUserID()) === $_SESSION["user"]){
+                $loggedInUsername = $user->getName();
+                $loggedInAvatar = $user->getAvatar();
+            }
+        }
+
+        $this->render("week", ["users" => $users, 'loggedInUsername'=>$loggedInUsername, 'loggedInAvatar'=>$loggedInAvatar]);
     }
 
     public function getEvents() {
