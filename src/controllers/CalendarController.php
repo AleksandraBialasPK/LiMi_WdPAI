@@ -28,10 +28,9 @@ class CalendarController extends AppController {
         $users = $this->userRepository->getUsers();
 
         foreach ($users as $user) {
-            if($user->getUserID() === $_SESSION['user']){
+            if(strval($user->getUserID()) === $_SESSION["user"]){
                 $loggedInUsername = $user->getName();
             }
-            else {$loggedInUsername = $_SESSION['user'];}
         }
 
         $this->render("day", ["users" => $users, 'loggedInUsername'=>$loggedInUsername]);

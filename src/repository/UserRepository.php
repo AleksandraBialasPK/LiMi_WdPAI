@@ -54,13 +54,13 @@ class UserRepository extends Repository {
         ]);
         $userDetailsID = $statement->fetch(PDO::FETCH_ASSOC)["userDetailsID"];
 
-        $raw_statement = "INSERT into \"Users\" (email, password, \"roleID\", \"userDetailsID\") values (?, ?, ?, ?)";
+        $raw_statement = "INSERT into \"Users\" (\"userDetailsID\", \"roleID\", email, password) values (?, ?, ?, ?)";
         $statement = $this->database->connect()->prepare($raw_statement);
         $statement->execute([
-            $user->getEmail(),
-            $user->getPassword(),
+            $userDetailsID,
             $user->getRoleID(),
-            $userDetailsID
+            $user->getEmail(),
+            $user->getPassword()
         ]);
 
     }
