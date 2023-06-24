@@ -25,12 +25,36 @@ class EventRepository extends Repository{
         );
     }
 
+    public function getEventsForDay(string $day) {
+        $raw_statement = "SELECT * FROM \"Events\" where date = :day";
+        $statement = $this->database->connect()->prepare($raw_statement);
+        $statement->bindParam(":day", $day, PDO::PARAM_STR);
+        $statement->execute();
+
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
+
+    }
+
+    public function getEvents(): array {
+        $result = [];
+        $raw_statement = "SELECT * FROM \"Events\"";
+        $statement = $this->database->connect()->prepare($raw_statement);
+        $statement->execute();
+        $events = $statement->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($events as $event) {
+            $result[] = new Event(
+                $event["title"],
+                $event["category"],
+                $event["date"],
+                $event["startTime"],
+                $event["endTime"]
+            );
+        }
+        return $result;
+    }
+
     public function addEvent(Event $event): void {
-//        echo($event->getTitle());
-//        echo($event->getCategory());
-//        echo($event->getDate());
-//        echo(var_dump($event->getStartTime()));
-//        echo(var_dump($event->getEndTime()));
+
         $statement = $this->database->connect()->prepare(
             "INSERT INTO \"Events\" (title, category, date, \"startTime\", \"endTime\") VALUES (?, ?, ?, ?, ?)"
         );
@@ -44,3 +68,4 @@ class EventRepository extends Repository{
             ]);
     }
 }
+

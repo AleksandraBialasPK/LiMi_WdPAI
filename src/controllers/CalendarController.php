@@ -37,6 +37,24 @@ class CalendarController extends AppController {
         $this->render("day", ["users" => $users, 'loggedInUsername'=>$loggedInUsername, 'loggedInAvatar'=>$loggedInAvatar]);
     }
 
+    public function getEventsForDay() {
+        session_start();
+        if (empty($_SESSION["user"])) {
+            $url = "http://$_SERVER[HTTP_HOST]";
+            header("Location: {$url}/logout");
+            return null;
+        }
+        $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : "";
+        if($contentType === "application/json") {
+            $content = trim(file_get_contents("php://input"));
+            $decoded_content = json_decode($content, true);
+
+            header("Content-type: application/json");
+            http_response_code(200);
+            echo json_encode($this->eventRepository->getEventsForDay($decoded_content["day"]));
+        }
+    }
+
     public function week() {
         session_start();
         if (empty($_SESSION["user"])) {
@@ -63,7 +81,7 @@ class CalendarController extends AppController {
             header("Location: {$url}/logout");
             return null;
         }
-        $events = $this->eventRepository->getEvent();
+        $events = $this->eventRepository->getEvents();
         $this->render('day', ["day"=>$events]);
     }
 

@@ -19,7 +19,7 @@
             <label for="category-form">Category: </label>
             <select name="category" id="category-form">
                 <option value="sports" class="sports">Sports</option>
-                <option value="work-school" class="work-school">Work/School</option>
+                <option value="work-school" class="work-school">Work-School</option>
                 <option value="home" class="home">Home</option>
                 <option value="social" class="social">Social</option>
                 <option value="other" class="other">Other</option>
@@ -43,8 +43,8 @@
         <button class="create-new-event" id="create-new-event-button">Create new event</button>
         <div class="events">
             <label for="Sports"><input type="checkbox" class="checkbox-event sports" id="Sports" name="Sports" checked>Sports</label>
-            <label for="Work/School"><input type="checkbox" class="checkbox-event work-school" id="Work/School"
-                                        name="Work/School" checked>Work/School</label>
+            <label for="Work-School"><input type="checkbox" class="checkbox-event work-school" id="Work-School"
+                                        name="Work-School" checked>Work-School</label>
             <label for="House"><input type="checkbox" class="checkbox-event home" id="House" name="House" checked>Home</label>
             <label for="Social"><input type="checkbox" class="checkbox-event social" id="Social" name="Social" checked>Social</label>
             <label for="Other"><input type="checkbox" class="checkbox-event other" id="other" name="other"
@@ -88,5 +88,6 @@
         </section>
     </main>
     <script src="public/JS/day.js"></script>
-    <script src="public/JS/createNewEvent.js"></script>
+    <script src="public/JS/displayDayEvents.js"></script>
+<!--    <script src="public/JS/createNewEvent.js"></script>-->
 </body>
