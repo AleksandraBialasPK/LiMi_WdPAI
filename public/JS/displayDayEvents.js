@@ -1,8 +1,27 @@
 const eventsContainer = document.querySelector(".event-container");
 let eventsCode = "";
 
+
+function convertStringTimeToMinutes(time) {
+    let [hours, minutes] = time.split(':');
+    let hoursInt = parseInt(hours);
+    let hoursToMinutes = hoursInt*60;
+    let minutesFloat = parseFloat(minutes);
+    let convertedTime = hoursToMinutes + minutesFloat;
+
+    return convertedTime;
+}
+
+function eventDuration(startTimeStr, endTimeStr) {
+    let startTimeInMinutes = convertStringTimeToMinutes(startTimeStr);
+    let endTimeInMinutes = convertStringTimeToMinutes(endTimeStr);
+    let eventLength = (endTimeInMinutes - startTimeInMinutes)/60;
+
+    return eventLength.toFixed(2);
+}
+
 function adjustLength(start, end, id) {
-    let length = 100 * (end - start);
+    let length = 100 * eventDuration(start, end);
 
     // const elementToChange = document.querySelector(`#${id}`);
     const elementToChange = document.querySelector(`[data-id="${id}" ]`);
