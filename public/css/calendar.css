@@ -524,6 +524,7 @@ button:hover {
 }
 
 .event-tile {
+    position: absolute;
     width: 150px;
     border-radius: 5px;
     display: flex;

@@ -22,10 +22,11 @@ function eventDuration(startTimeStr, endTimeStr) {
 
 function adjustLength(start, end, id) {
     let length = 100 * eventDuration(start, end);
+    let startTime = convertStringTimeToMinutes(start)/60;
 
     // const elementToChange = document.querySelector(`#${id}`);
     const elementToChange = document.querySelector(`[data-id="${id}" ]`);
-    elementToChange.style.padding = `${start * 100}px`;
+    elementToChange.style.marginTop = `${startTime * 100}px`;
     elementToChange.style.height = `${length}px`;
 }
 
