@@ -62,6 +62,5 @@ class UserRepository extends Repository {
             $user->getEmail(),
             $user->getPassword()
         ]);
-
     }
 }

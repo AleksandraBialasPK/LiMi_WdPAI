@@ -86,6 +86,12 @@ class CalendarController extends AppController {
     }
 
     public function addEvent() {
+        session_start();
+        if (empty($_SESSION["user"])) {
+            $url = "http://$_SERVER[HTTP_HOST]";
+            header("Location: {$url}/logout");
+            return null;
+        }
         if ($this->isPost()) {
             $title = $_POST['title'];
             $category = $_POST['category'];
@@ -95,7 +101,7 @@ class CalendarController extends AppController {
 
             $event = new Event($title, $category, $date, $startTime, $endTime);
 
-            $this->eventRepository->addEvent($event);
+            $this->eventRepository->addEvent($event, $_SESSION["user"]);
 
             $url = "http://$_SERVER[HTTP_HOST]";
             header("Location: {$url}/day");

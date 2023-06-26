@@ -62,10 +62,9 @@ class EventRepository extends Repository{
         return $result;
     }
 
-    public function addEvent(Event $event): void {
-
+    public function addEvent(Event $event, string $userID): void {
         $statement = $this->database->connect()->prepare(
-            "INSERT INTO \"Events\" (title, category, date, \"startTime\", \"endTime\") VALUES (?, ?, ?, ?, ?)"
+            "INSERT INTO \"Events\" (title, category, date, \"startTime\", \"endTime\") VALUES (?, ?, ?, ?, ?) RETURNING \"eventID\""
         );
 
         $statement->execute([
@@ -75,6 +74,11 @@ class EventRepository extends Repository{
             $event->getStartTime(),
             $event->getEndTime()
             ]);
+        $eventID = $statement->fetch(PDO::FETCH_ASSOC)["eventID"];
+
+        $raw_statement = "INSERT INTO \"UserToEvent\" (\"userID\", \"eventID\") VALUES (?, ?)";
+        $statement = $this->database->connect()->prepare($raw_statement);
+        $statement->execute([$userID, $eventID]);
     }
 }
 

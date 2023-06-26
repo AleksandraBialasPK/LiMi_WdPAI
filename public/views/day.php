@@ -88,6 +88,6 @@
         </section>
     </main>
     <script src="public/JS/day.js"></script>
-    <script src="public/JS/displayDayEvents.js"></script>
-<!--    <script src="public/JS/createNewEvent.js"></script>-->
+<!--    <script src="public/JS/displayDayEvents.js"></script>-->
+    <script src="public/JS/createNewEvent.js"></script>
 </body>
