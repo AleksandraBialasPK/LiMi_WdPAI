@@ -26,7 +26,16 @@ class EventRepository extends Repository{
     }
 
     public function getEventsForDay(string $day) {
-        $raw_statement = "SELECT * FROM \"Events\" where date = :day";
+        $raw_statement = "SELECT \"Events\".\"eventID\", \"Events\".title, \"Events\".category, \"Events\".date, 
+                            \"Events\".\"startTime\", \"Events\".\"endTime\", \"UserDetails\".avatar 
+                            FROM \"UserToEvent\"
+                            INNER JOIN \"Events\"
+                                ON \"UserToEvent\".\"eventID\" = \"Events\".\"eventID\"
+                            INNER JOIN \"Users\"
+                                ON \"UserToEvent\".\"userID\" = \"Users\".\"userID\"
+                            INNER JOIN \"UserDetails\"
+                                ON \"Users\".\"userDetailsID\" = \"UserDetails\".\"userDetailsID\"
+                            WHERE \"Events\".date = :day";
         $statement = $this->database->connect()->prepare($raw_statement);
         $statement->bindParam(":day", $day, PDO::PARAM_STR);
         $statement->execute();

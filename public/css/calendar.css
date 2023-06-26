@@ -586,6 +586,14 @@ button:hover {
     border: 1px solid #046380;
 }
 
+.picture-for-event > img {
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+    background-position: top center;
+    border-radius: 50%;
+}
+
 .event-desc {
     display: grid;
     grid-template: 4fr 1fr / 1fr;
