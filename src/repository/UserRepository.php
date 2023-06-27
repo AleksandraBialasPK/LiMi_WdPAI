@@ -63,4 +63,17 @@ class UserRepository extends Repository {
             $user->getPassword()
         ]);
     }
+
+    public function addUserToSession(int $userID) {
+        $raw_statement = "INSERT INTO \"Session\" (\"userID\") values (?)";
+        $statement = $this->database->connect()->prepare($raw_statement);
+        $statement->execute([$userID]);
+    }
+
+    public function deleteUserFromSession(int $userID) {
+        $raw_statement = "DELETE FROM \"Session\" WHERE \"userID\"=:param";
+        $statement = $this->database->connect()->prepare($raw_statement);
+        $statement->bindParam(":param", $userID, PDO::PARAM_STR);
+        $statement->execute();
+    }
 }
