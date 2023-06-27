@@ -50,6 +50,13 @@ form {
     height: 50%;
 }
 
+.messages {
+    padding: 10px;
+    margin-bottom: 15px;
+    color: crimson;
+    text-align: center;
+}
+
 .login-form-container {
     display: flex;
     flex-direction: column;

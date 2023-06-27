@@ -28,7 +28,7 @@ body {
     justify-content: center;
     align-items: center;
     padding: 20px 24px 20px;
-    gap: 40px;
+    gap: 20px;
     float: right;
     width: 20%;
     height: 100%;
@@ -38,8 +38,8 @@ body {
 
 .new-event-form {
     position: fixed;
-    top: 20%;
-    right: 43%;
+    top: 18%;
+    right: 45%;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -56,15 +56,27 @@ body {
     justify-content: center;
     align-items: center;
     padding-top: 20px;
-    padding-bottom: 40px;
+    padding-bottom: 20px;
 }
 
 .user-icon-add-event {
-    width: 50px;
-    height: 50px;
-    border: 2px solid #046380;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
-    margin: 5px
+    background-color: white;
+    vertical-align: middle;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    margin-bottom: 5px;
+}
+
+.user-icon-add-event >img {
+    width: 80px;
+    height: 80px;
+    background-size: cover;
+    background-position: top center;
+    border-radius: 50%;
 }
 
 
@@ -88,8 +100,15 @@ select {
 }
 
 #btn-add-new-event {
-    margin-top: 35px;
-    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 15px;
+    margin-top: 25px;
+    width: 80px;
+    height: 50px;
+    min-width: 30%;
+    cursor: pointer;
 }
 
 main {
@@ -237,14 +256,23 @@ button:hover {
 }
 
 .calendar-with-timeline-container {
+    min-width: 80%;
+    position: fixed;
     box-sizing: border-box;
     padding: 0 10px 10px 10px;
-    height: 86%;
     display: grid;
     grid-template: 1fr / 1fr 17fr;
     overflow: auto;
     scrollbar-width: thin;
     scrollbar-color: #E2ECEA  #FFFFFF;
+}
+
+.day {
+    height: 86%;
+}
+
+.week {
+    height: 81%;
 }
 
 .calendar-with-timeline-container::-webkit-scrollbar {
@@ -305,6 +333,7 @@ button:hover {
 }
 
 .event-container {
+    position: initial;
     grid-column: 2 / span 1;
 }
 
@@ -393,18 +422,37 @@ button:hover {
     grid-column: 7 / span 1;
 }
 
-.checkbox-person {
-    width: 30px;
-    height: 30px;
+.avatar {
+    width: 50px;
+    height: 50px;
     background-color: white;
     border-radius: 50%;
     vertical-align: middle;
-    border: 2px solid #ddd;
-    margin: 0.5em 1em;
+    margin: 5px 1em;
     appearance: none;
     -webkit-appearance: none;
     outline: none;
-    cursor: pointer;
+}
+
+.avatar>img {
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    background-position: top center;
+    border-radius: 50%;
+}
+
+.person {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .events {
@@ -479,15 +527,34 @@ button:hover {
 }
 
 .event-tile {
+    position: absolute;
     width: 150px;
-    background-color: rgba(255, 153, 183, 0.3);
     border-radius: 5px;
     display: flex;
 }
 
+.event-tile-sports {
+    background-color: rgba(255, 153, 183, 0.3);
+}
+
+.event-tile-work-school {
+    background-color: rgba(174, 195, 255, 0.3);
+}
+
+.event-tile-home {
+    background-color: rgba(198, 185, 223, 0.3);
+}
+
+.event-tile-social {
+    background-color: rgba(130, 205, 71, 0.3);
+}
+
+.event-tile-other {
+    background-color: rgba(255, 234, 32, 0.3);
+}
+
 .side-color {
     width: 30px;
-    background-color: #FF99B7;
     border-radius: 5px 0 0 5px;
     display: flex;
     flex-direction: column;
@@ -495,11 +562,39 @@ button:hover {
     justify-content: center;
 }
 
+.side-color-sports{
+    background-color: #FF99B7;
+}
+
+.side-color-work-school{
+    background-color: #AEC3FF;
+}
+
+.side-color-home {
+    background-color: #C6B9DF;
+}
+
+.side-color-social {
+    background-color: #82CD47;
+}
+
+.side-color-other {
+    background-color: #FFEA20;
+}
+
 .picture-for-event {
     width: 20px;
     height: 20px;
     border-radius: 50%;
     border: 1px solid #046380;
+}
+
+.picture-for-event > img {
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+    background-position: top center;
+    border-radius: 50%;
 }
 
 .event-desc {
@@ -520,5 +615,3 @@ button:hover {
     align-items: flex-end;
     justify-content: flex-end;
 }
-
-

@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="../css/calendar.css">
-    <link rel="stylesheet" type="text/css" href="../css/Montserrat.css">
+    <link rel="stylesheet" type="text/css" href="public/css/calendar.css">
+    <link rel="stylesheet" type="text/css" href="public/css/Montserrat.css">
     <script src="https://kit.fontawesome.com/79d7c5829a.js" crossorigin="anonymous"></script>
     <title>Week by Limi</title>
 </head>
 <body>
-<form class="new-event-form" id="form">
+<form class="new-event-form" id="form" method="POST" action="/addEvent">
     <div class="user-add-event">
-        <div class="user-icon-add-event"></div>
-        <div>Aleksandra</div>
+        <div class="user-icon-add-event"><img src="public/avatars/<?= $loggedInAvatar ?>"></div>
+        <div><?= $loggedInUsername; ?></div>
     </div>
     <div class="add-event-form-divs">
         <label for="event-title-form">Title: </label>
-        <input name="event-name" type="text" id="event-title-form" required maxlength="20"/>
+        <input name="title" type="text" id="event-title-form" required maxlength="20"/>
     </div>
     <div class="add-event-form-divs">
         <label for="category-form">Category: </label>
-        <select name="categories" id="category-form">
+        <select name="category" id="category-form">
             <option value="sports" class="sports">Sports</option>
             <option value="work-school" class="work-school">Work/School</option>
             <option value="home" class="home">Home</option>
@@ -28,17 +27,17 @@
     </div>
     <div class="add-event-form-divs">
         <label for="event-date-form">Event date: </label>
-        <input type="date" id="event-date-form" name="event-date-form" required/>
+        <input type="date" id="event-date-form" name="date" required/>
     </div>
     <div class="add-event-form-divs">
         <label for="start-time-form">Start time: </label>
-        <input type="time" id="start-time-form" name="start-time-form" required>
+        <input type="time" id="start-time-form" name="startTime" required>
     </div>
     <div class="add-event-form-divs">
         <label for="end-time-form">End time: </label>
-        <input type="time" id="end-time-form" name="end-time-form" required>
+        <input type="time" id="end-time-form" name="endTime" required>
     </div>
-    <button id="btn-add-new-event" type="submit">Add event!</button>
+    <div class="add-event-form-divs"><button id="btn-add-new-event" type="submit">Add event!</button></div>
 </form>
 <section class="sidebar-nav">
     <button class="create-new-event" id="create-new-event-button">Create new event</button>
@@ -52,22 +51,25 @@
                                   checked>Other</label>
     </div>
     <div class="events">
-        <label for="Person1"><input type="checkbox" class="checkbox-person" id="Person1" name="Person" checked>Aleksandra</label>
-        <label for="Person2"><input type="checkbox" class="checkbox-person" id="Person2" name="Person"
-                                    checked>Aleks</label>
-        <label for="Person3"><input type="checkbox" class="checkbox-person" id="Person3" name="Person"
-                                    checked>Hanna</label>
-        <label for="Person4"><input type="checkbox" class="checkbox-person" id="Person4" name="Person"
-                                    checked>Dawid</label>
+        <?php foreach ($users as $user): ?>
+            <div class="person" id="person_1">
+                <div class="avatar">
+                    <img src="public/avatars/<?= $user->getAvatar(); ?>">
+                </div>
+                <div class="nickname">
+                    <span class="name"><?= $user->getName();?></span>
+                </div>
+            </div>
+        <?php endforeach; ?>
     </div>
-    <button>Log out</button>
+    <a href="/logout"><button>Log out</button></a>
 </section>
 <main>
     <header>
         <nav class="header-with-days-of-the-week">
             <div class="views-nav">
-                <a href="day.html" class="day-week-nav">Day</a>
-                <a href="week.html" class="day-week-nav active-view">Week</a>
+                <a href="/day" class="day-week-nav">Day</a>
+                <a href="/week" class="day-week-nav active-view">Week</a>
             </div>
             <div class="change-date push-right-week" id="change-date-week">
                 <div class="nav-arrows prev-week-btn"><i class="fa-solid fa-chevron-left"></i></div>
@@ -85,7 +87,7 @@
             <div class="day-of-the-week">Saturday</div>
         </div>
     </header>
-    <section class="calendar-with-timeline-container">
+    <section class="calendar-with-timeline-container week">
         <div class="timeline">
         </div>
         <div class="calendar-container">
@@ -108,6 +110,6 @@
         </div>
     </section>
 </main>
-<script src="../JS/week.js"></script>
-<script src="../JS/createNewEvent.js"></script>
+<script src="public/JS/week.js"></script>
+<script src="public/JS/createNewEvent.js"></script>
 </body>
