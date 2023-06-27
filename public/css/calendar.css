@@ -256,6 +256,8 @@ button:hover {
 }
 
 .calendar-with-timeline-container {
+    min-width: 80%;
+    position: fixed;
     box-sizing: border-box;
     padding: 0 10px 10px 10px;
     display: grid;
@@ -331,6 +333,7 @@ button:hover {
 }
 
 .event-container {
+    position: initial;
     grid-column: 2 / span 1;
 }
 
@@ -612,5 +615,3 @@ button:hover {
     align-items: flex-end;
     justify-content: flex-end;
 }
-
-
