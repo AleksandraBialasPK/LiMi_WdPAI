@@ -45,12 +45,15 @@ class SecurityController extends AppController {
         $userID = $user->getUserID();
         $_SESSION["user"] = htmlspecialchars($userID);
 
+        $this->userRepository->addUserToSession($userID);
         $url = "http://$_SERVER[HTTP_HOST]";
         header("Location: {$url}/day");
     }
 
     public function logout() {
         session_start();
+        $userID = $_SESSION["user"];
+        $this->userRepository->deleteUserFromSession($userID);
         unset($_SESSION["user"]);
         session_destroy();
         $url = "http://$_SERVER[HTTP_HOST]";
