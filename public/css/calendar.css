@@ -630,12 +630,35 @@ button:hover {
 
     header {
         width: 115%;
+        height: 10%;
         padding-top: 1vh;
         padding-left: 1vh;
     }
 
     .header-with-days-of-the-week {
+        margin-top: 3%;
         width: 99%;
+        height: 80%;
+        font-size: 100px;
+    }
+
+    .views-nav {
+        height: 60px;
+        margin-left: 1vh;
+        border-radius: 10px;
+    }
+
+    .day-week-nav {
+        height: 100%;
+        font-size: x-large;
+    }
+
+    .day-with-date {
+        font-size: 1.2em;
+    }
+
+    #change-date-day {
+        width: 32%;
     }
 
     .sidebar-nav {
@@ -664,12 +687,12 @@ button:hover {
         visibility: visible;
         margin-right: 1vh;
         width: 150px;
-        height: 50px;
-        border-radius: 10px;
+        height: 60px;
+        border-radius: 5px;
     }
 
     .push-right-day {
-        margin-right: 20%;
+        margin-right: 18%;
         margin-left: auto;
     }
 }
