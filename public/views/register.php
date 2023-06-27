@@ -34,4 +34,5 @@
 <div class="login-right-side">
     <img id="dogs-image" src="public/img/BeFunky-collage.jpg" alt="Happy Shih Tzu (dog)">
 </div>
+<script src="public/JS/registration_validation.js"></script>
 </body>
