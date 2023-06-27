@@ -76,6 +76,7 @@
                 <div class="day-with-date day"></div>
                 <div class="nav-arrows next-day-btn"><i class="fa-solid fa-chevron-right"></i></div>
             </div>
+            <a href="/logout"><button class="logout-mobile">Log out</button></a>
         </nav>
     </header>
     <section class="calendar-with-timeline-container day">
