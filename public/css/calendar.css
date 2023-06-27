@@ -528,7 +528,7 @@ button:hover {
 
 .event-tile {
     position: absolute;
-    width: 150px;
+    width: 200px;
     border-radius: 5px;
     display: flex;
 }
@@ -554,7 +554,7 @@ button:hover {
 }
 
 .side-color {
-    width: 30px;
+    width: 44px;
     border-radius: 5px 0 0 5px;
     display: flex;
     flex-direction: column;
@@ -583,15 +583,15 @@ button:hover {
 }
 
 .picture-for-event {
-    width: 20px;
-    height: 20px;
+    padding-top: 5px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
-    border: 1px solid #046380;
 }
 
 .picture-for-event > img {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     background-size: cover;
     background-position: top center;
     border-radius: 50%;
@@ -605,13 +605,13 @@ button:hover {
 
 .event-name {
     grid-row: 1 / span 1;
-    padding: 5px;
+    padding: 10px;
 }
 
 .event-time{
     grid-row: 2 / span 1;
     width: 100%;
-    padding: 2px 5px;
+    padding: 5px 10px;
     font-size: small;
     display: flex;
     align-items: flex-end;

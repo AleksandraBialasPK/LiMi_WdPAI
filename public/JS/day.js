@@ -160,7 +160,7 @@ function addEvent(event){
     // eventsCode += `<div class="event-tile event-tile-${event.category}" id="${event.eventID}">
     eventsCode += `<div class="event-tile event-tile-${event.category}" data-id="${event.eventID}">    
                  <div class="side-color side-color-${event.category}">
-                    <div class="picture-for-event"><img src="public/avatars/${event.avatar}"/></div>
+                    <div class="picture-for-event"><img src="public/avatars/${event.avatar}"/></div>   
                  </div>
                  <div class="event-desc">
                     <div class="event-name">${event.title}</div>
@@ -168,7 +168,6 @@ function addEvent(event){
                  </div>
                </div>`;
 }
-
 
 nextDayBtn.addEventListener("click", () => {
     currentDay++;
