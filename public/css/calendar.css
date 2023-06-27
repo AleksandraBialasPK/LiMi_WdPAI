@@ -615,3 +615,32 @@ button:hover {
     align-items: flex-end;
     justify-content: flex-end;
 }
+
+@media only screen and (max-device-width: 420px) {
+
+    * {
+        font-family: 'Montserrat', sans-serif;
+        box-sizing: border-box;
+    }
+
+    header {
+        padding-top: 1vh;
+        padding-left: 1vh;
+    }
+
+    .sidebar-nav {
+        max-width: 0;
+        visibility: hidden;
+    }
+
+    body {
+        width: 100%;
+        min-height: 105vh;
+    }
+
+    .calendar-with-timeline-container {
+        min-height: 97%;
+        padding-bottom: 2vh;
+        padding-left: 1vh;
+    }
+}
