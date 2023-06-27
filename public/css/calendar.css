@@ -624,13 +624,22 @@ button:hover {
     }
 
     header {
+        width: 115%;
         padding-top: 1vh;
         padding-left: 1vh;
+    }
+
+    .header-with-days-of-the-week {
+        width: 99%;
     }
 
     .sidebar-nav {
         max-width: 0;
         visibility: hidden;
+    }
+
+    main {
+        width: 95%;
     }
 
     body {
@@ -639,8 +648,10 @@ button:hover {
     }
 
     .calendar-with-timeline-container {
+        width: 100%;
         min-height: 97%;
         padding-bottom: 2vh;
         padding-left: 1vh;
+        padding-right: 1vh;
     }
 }
