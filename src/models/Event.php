@@ -1,6 +1,5 @@
 <?php
 
-#TODO return types of date and time in construct
 class Event{
 
     private $title;
