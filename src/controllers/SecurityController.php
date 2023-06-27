@@ -85,7 +85,7 @@ class SecurityController extends AppController {
             }
 
             if ($password !== $confirmedPassword) {
-                $this->render('register', ['messages' => ['Please provide the proper password']]);
+                $this->render('register', ['messages' => ['Please provide a proper password']]);
             }
 
             $password = password_hash($password, PASSWORD_DEFAULT);
