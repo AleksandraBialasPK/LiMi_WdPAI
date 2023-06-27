@@ -598,6 +598,7 @@ button:hover {
 }
 
 .event-desc {
+    width: 100%;
     display: grid;
     grid-template: 4fr 1fr / 1fr;
 }
@@ -609,6 +610,7 @@ button:hover {
 
 .event-time{
     grid-row: 2 / span 1;
+    width: 100%;
     padding: 2px 5px;
     font-size: small;
     display: flex;
