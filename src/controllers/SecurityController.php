@@ -43,7 +43,10 @@ class SecurityController extends AppController {
         }
 
         $userID = $user->getUserID();
+        $roleID = $user->getRoleID();
+
         $_SESSION["user"] = htmlspecialchars($userID);
+        $_SESSION["userRoleID"] = htmlspecialchars($roleID);
 
         $this->userRepository->addUserToSession($userID);
         $url = "http://$_SERVER[HTTP_HOST]";
@@ -55,6 +58,7 @@ class SecurityController extends AppController {
         $userID = $_SESSION["user"];
         $this->userRepository->deleteUserFromSession($userID);
         unset($_SESSION["user"]);
+        unset($_SESSION["userRoleID"]);
         session_destroy();
         $url = "http://$_SERVER[HTTP_HOST]";
         header("Location: {$url}/login");

@@ -34,7 +34,8 @@ class CalendarController extends AppController {
             }
         }
 
-        $this->render("day", ["users" => $users, 'loggedInUsername'=>$loggedInUsername, 'loggedInAvatar'=>$loggedInAvatar]);
+        $userRoleID = $_SESSION["userRoleID"];
+        $this->render("day", ["users" => $users, 'loggedInUsername'=>$loggedInUsername, 'loggedInAvatar'=>$loggedInAvatar, 'userRoleID'=>$userRoleID]);
     }
 
     public function getEventsForDay() {

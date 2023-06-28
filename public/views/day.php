@@ -40,6 +40,9 @@
     <div class="add-event-form-divs"><button id="btn-add-new-event" type="submit">Add event!</button></div>
 </form>
 <section class="sidebar-nav">
+    <?php if($userRoleID === strval(2)):?>
+        <h3 class="admin-alert">Hello admin!</h3>
+    <?php endif; ?>
     <button class="create-new-event" id="create-new-event-button">Create new event</button>
     <div class="events">
         <label for="Sports"><input type="checkbox" class="checkbox-event sports" id="Sports" name="Sports" checked>Sports</label>
