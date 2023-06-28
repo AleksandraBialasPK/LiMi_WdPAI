@@ -2,7 +2,7 @@
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/login_logout.css">
     <script src="https://kit.fontawesome.com/79d7c5829a.js" crossorigin="anonymous"></script>
-    <script  type="text/javascript" src="public/JS/registration_validation.js" defer></script>
+    <script type="text/javascript" src="./public/JS/registration_validation.js" defer></script>
     <title>Welcome to LiMi!</title>
 </head>
 <body>
