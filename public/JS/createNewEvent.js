@@ -2,8 +2,6 @@ const createNewEvent = document.querySelector(".create-new-event"),
      form = document.getElementById('form'),
     outsideOfForm = document.querySelector("main");
 
-let events = ``;
-
 form.style.display = 'none';
 
 createNewEvent.addEventListener('click', () => {
