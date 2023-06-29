@@ -36,7 +36,10 @@ This repository contains all of the project files (including the documentation),
     ```bash
     docker-compose start
     ```
-    
+
+### ERD with views
+![MyImage](ERD_z_widokiem.png)
+
 ### Contact
 Aleksandra Białas
 Cracow University of Technology
